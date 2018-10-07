@@ -13,10 +13,10 @@ body{
 
 /*HEADER CSS*/
 header{
-	background: #353637;
+	background: #3342FF;
 	color: #ffffff;
 	min-height: 50px;
-	border-bottom: #32a0c2 3px solid;/*remove this*/
+	border-bottom: #353637 3px solid;/*remove this*/
 }
 
 header li{
@@ -39,7 +39,7 @@ header nav{
 	font-size: 12px;
 }
 .current a{
-	color: #32a0c2;
+	color: #ffffff;
 	font-weight: bold;
 }
 header a:hover{
@@ -72,11 +72,15 @@ a:hover{
 /*index sign in form css*/
 .regform{
 	text-align: center;
-	background: #32a0c2;
+	background: #E8E8EC;
 	width: 30%;
 	min-height: 474px;
 	margin: 0 auto;
 	border-radius: 5px;
+	color: #C70039;
+}
+.regform a{
+	color: #C70039;
 }
 .regform h2{
 	padding: 15px;
@@ -97,8 +101,8 @@ a:hover{
   color: #ffffff;}*/
 footer{
 	text-align: center;
-	background: #32a0c2;
-	color: #ffffff;
+	background: #E8E8EC;
+	color: #C70039;
 	padding: 20px;
 	margin-top: 20px;
 }
