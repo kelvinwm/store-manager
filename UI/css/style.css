@@ -6,7 +6,7 @@ body{
 	font-family:Roboto,sans-serif;
 }
 .container{
-	width: 98%;
+	width: 99%;
 	margin: auto;
 	overflow: hidden;
 }
@@ -16,7 +16,8 @@ header{
 	background: #3342FF;
 	color: #ffffff;
 	min-height: 50px;
-	border-bottom: #353637 3px solid;/*remove this*/
+	border-bottom: #C70039 3px solid;
+
 }
 
 header li{
@@ -30,8 +31,7 @@ header #trademark{
 }
 #trademark h1{
 	margin: 0;
-	font-size: 16px;
-	
+	font-size: 16px;	
 }
 header nav{
 	float: right;
@@ -91,6 +91,38 @@ a:hover{
 	padding-left: 30px;
 	padding-right: 30px;
 	font-weight: bold;
+}
+/*heading of the system at home page*/
+#systemimage{
+	min-height: 100px;
+	text-align: center;
+	color: #C70039;
+	border-bottom: #C70039 3px solid;
+}
+img {
+    width:25px;
+    height: auto;
+}
+/*View all products body*/
+#main-col{
+	float: right;
+	width: 79%;
+    border-radius: 5px;
+    border: 1px solid #73AD21;
+    margin-top: 5px;
+}
+#categories{
+	float: left;
+	width: 20%;
+	border-radius: 5px;
+}
+#categories li{
+    padding-top: 5px;
+    list-style: none;
+    color: #ffffff;
+}
+#categories h1{
+	text-align: center;
 }
 /*
 #login-background {
