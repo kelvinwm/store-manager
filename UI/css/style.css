@@ -1,0 +1,67 @@
+/*common css*/
+body{
+	padding: 0;	
+	margin: 0;
+	background-color: #f4f5f7;
+	font-family:Roboto,sans-serif;
+}
+.container_1{
+	width: 98%;
+	margin: auto;
+	overflow: hidden;
+}
+
+/*HEADER CSS*/
+header{
+	background: #353637;
+	color: #ffffff;
+	min-height: 50px;
+	border-bottom: #32a0c2 3px solid;/*remove this*/
+}
+
+header li{
+	float: left;
+	display: inline;
+	padding: 0 10px 0 10px;
+}
+header #trademark{
+	margin-top: 15px;
+	float: left;
+}
+#trademark h1{
+	margin: 0;
+	font-size: 16px;
+	
+}
+header nav{
+	float: right;
+	margin-top: 15px;
+	font-size: 12px;
+}
+.current a{
+	color: #32a0c2;
+	font-weight: bold;
+}
+header a:hover{
+	color: #32a0c2;
+	font-weight: bold;
+}
+header a{
+	color: #ffffff;
+	text-decoration: none;
+}
+a{
+	text-decoration: none;
+}
+a:hover{
+	color: #000000;
+	font-weight: bold;
+}
+
+footer{
+	text-align: center;
+	background: #32a0c2;
+	color: #ffffff;
+	padding: 20px;
+	margin-top: 20px;
+}
