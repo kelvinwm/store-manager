@@ -168,6 +168,14 @@ tr:nth-child(even) {
 #productdetails{
 	margin-left: 50%
 }
+#prdbtn{
+	height: 38px;
+	padding-left: 30px;
+	padding-right: 30px;
+	font-weight: bold;
+	margin: 5px;
+
+}
 /*
 #login-background {
   min-height: 400px;
