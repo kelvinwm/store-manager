@@ -125,11 +125,14 @@ img {
 	float: left;
 	width: 20%;
 	border-radius: 5px;
+	background: #E8E8EC;
+	margin-top: 15px;
+	padding: 5px;
 }
 #categories li{
     padding-top: 5px;
     list-style: none;
-    color: #ffffff;
+    color:  #C70039;
 }
 #categories h1{
 	text-align: center;
