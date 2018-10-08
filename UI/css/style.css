@@ -10,6 +10,9 @@ body{
 	margin: auto;
 	overflow: hidden;
 }
+ul{
+	list-style-type: none;
+}
 
 /*HEADER CSS*/
 header{
@@ -156,6 +159,11 @@ tr:nth-child(even) {
 	padding-right: 30px;
 	font-weight: bold;
 	background: #C70039
+}
+.singleproduct img{
+	width:50%;
+    height: auto
+    padding:10px;
 }
 /*
 #login-background {
