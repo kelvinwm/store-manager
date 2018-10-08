@@ -165,6 +165,9 @@ tr:nth-child(even) {
     height: auto
     padding:10px;
 }
+#productdetails{
+	margin-left: 50%
+}
 /*
 #login-background {
   min-height: 400px;
