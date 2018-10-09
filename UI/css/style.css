@@ -20,6 +20,9 @@ header{
 	color: #ffffff;
 	min-height: 50px;
 	border-bottom: #C70039 3px solid;
+	position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; 
 
 }
 
@@ -81,6 +84,7 @@ a:hover{
 	margin: 0 auto;
 	border-radius: 5px;
 	color: #C70039;
+  	margin-top: 70px;
 }
 .regform a{
 	color: #C70039;
@@ -101,6 +105,8 @@ a:hover{
 	text-align: center;
 	color: #C70039;
 	border-bottom: #C70039 3px solid;
+	padding: 16px;
+  	margin-top: 30px;
 }
 img {
     width:25px;
@@ -116,6 +122,10 @@ img {
 	width: 79%;
     border-radius: 5px;
     margin-top: 5px;
+}
+#main-col h2{
+	background: #C70039;
+	color: #ffffff;
 }
 #design ul{
     list-style-type: none;
