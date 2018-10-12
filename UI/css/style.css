@@ -1,0 +1,108 @@
+/*common css*/
+body{
+	padding: 0;	
+	margin: 0;
+	background-color: #f4f5f7;
+	font-family:Roboto,sans-serif;
+}
+.container{
+	width: 98%;
+	margin: auto;
+	overflow: hidden;
+}
+
+/*HEADER CSS*/
+header{
+	background: #3342FF;
+	color: #ffffff;
+	min-height: 50px;
+	border-bottom: #353637 3px solid;/*remove this*/
+}
+
+header li{
+	float: left;
+	display: inline;
+	padding: 0 10px 0 10px;
+}
+header #trademark{
+	margin-top: 15px;
+	float: left;
+}
+#trademark h1{
+	margin: 0;
+	font-size: 16px;
+	
+}
+header nav{
+	float: right;
+	margin-top: 15px;
+	font-size: 12px;
+}
+.current a{
+	color: #ffffff;
+	font-weight: bold;
+}
+header a:hover{
+	color: #32a0c2;
+	font-weight: bold;
+}
+header a{
+	color: #ffffff;
+	text-decoration: none;
+}
+a{
+	text-decoration: none;
+}
+a:hover{
+	color: #000000;
+	font-weight: bold;
+}
+/*index login inputs*/
+#entery input[type="password"]{
+	height: 42px;
+	width: 80%;
+	border-radius: 5px;
+	margin-top: 5%
+}
+#entery input[type="email"]{
+	height: 42px;
+	width: 80%;
+	border-radius: 5px;
+}
+/*index sign in form css*/
+.regform{
+	text-align: center;
+	background: #E8E8EC;
+	width: 30%;
+	min-height: 474px;
+	margin: 0 auto;
+	border-radius: 5px;
+	color: #C70039;
+}
+.regform a{
+	color: #C70039;
+}
+.regform h2{
+	padding: 15px;
+
+}
+#button_reg{
+	height: 38px;
+	padding-left: 30px;
+	padding-right: 30px;
+	font-weight: bold;
+}
+/*
+#login-background {
+  min-height: 400px;
+  background:url('../img/books.jpg') no-repeat center;
+  background-size: cover;
+  text-align: center;
+  color: #ffffff;}*/
+footer{
+	text-align: center;
+	background: #E8E8EC;
+	color: #C70039;
+	padding: 20px;
+	margin-top: 20px;
+}
