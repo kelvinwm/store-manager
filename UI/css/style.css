@@ -1,0 +1,173 @@
+/*common css*/
+body{
+	padding: 0;	
+	margin: 0;
+	background-color: #ffffff;
+	font-family:Roboto,sans-serif;
+}
+.container{
+	width: 99%;
+	margin: auto;
+	overflow: hidden;
+}
+
+/*HEADER CSS*/
+header{
+	background: #3342FF;
+	color: #ffffff;
+	min-height: 50px;
+	border-bottom: #C70039 3px solid;
+
+}
+
+header li{
+	float: left;
+	display: inline;
+	padding: 0 10px 0 10px;
+}
+header #trademark{
+	margin-top: 15px;
+	float: left;
+}
+#trademark h1{
+	margin: 0;
+	font-size: 16px;	
+}
+header nav{
+	float: right;
+	margin-top: 15px;
+	font-size: 12px;
+}
+.current a{
+	color: #ffffff;
+	font-weight: bold;
+}
+header a:hover{
+	color: #32a0c2;
+	font-weight: bold;
+}
+header a{
+	color: #ffffff;
+	text-decoration: none;
+}
+a{
+	text-decoration: none;
+}
+a:hover{
+	color: #000000;
+	font-weight: bold;
+}
+/*index login inputs*/
+#entery input[type="password"]{
+	height: 42px;
+	width: 80%;
+	border-radius: 5px;
+	margin-top: 5%
+}
+#entery input[type="email"]{
+	height: 42px;
+	width: 80%;
+	border-radius: 5px;
+}
+/*index sign in form css*/
+.regform{
+	text-align: center;
+	background: #E8E8EC;
+	width: 30%;
+	min-height: 474px;
+	margin: 0 auto;
+	border-radius: 5px;
+	color: #C70039;
+}
+.regform a{
+	color: #C70039;
+}
+.regform h2{
+	padding: 15px;
+
+}
+#button_reg{
+	height: 38px;
+	padding-left: 30px;
+	padding-right: 30px;
+	font-weight: bold;
+}
+/*heading of the system at home page*/
+#systemimage{
+	min-height: 100px;
+	text-align: center;
+	color: #C70039;
+	border-bottom: #C70039 3px solid;
+}
+img {
+    width:25px;
+    height: auto;
+}
+#prdimg{
+	width:100%;
+    height: auto;
+}
+/*View all products body*/
+#main-col{
+	float: right;
+	width: 79%;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+#design ul{
+    list-style-type: none;
+    overflow: hidden;
+}
+#categories{
+	float: left;
+	width: 20%;
+	border-radius: 5px;
+}
+#categories li{
+    padding-top: 5px;
+    list-style: none;
+    color: #ffffff;
+}
+#categories h1{
+	text-align: center;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+td {
+    padding: 16px;
+}
+tr{
+	border-bottom: #C70039 3px solid;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+#overflow{
+	overflow-x:auto;
+}
+.addtocartbtn{
+	height: 38px;
+	padding-left: 30px;
+	padding-right: 30px;
+	font-weight: bold;
+	background: #C70039
+}
+/*
+#login-background {
+  min-height: 400px;
+  background:url('../img/books.jpg') no-repeat center;
+  background-size: cover;
+  text-align: center;
+  color: #ffffff;}*/
+footer{
+	text-align: center;
+	background: #E8E8EC;
+	color: #C70039;
+	padding: 20px;
+	margin-top: 20px;
+}
