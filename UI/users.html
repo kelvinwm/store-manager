@@ -12,7 +12,8 @@
           <h1>Store Manager</h1>
         </div>
         <nav>
-         <ul>
+         
+          <ul>
             <li> <form>
             <input type="text" id="searchpd" name="search" placeholder="Search.....">
             <button type="button" class="btn">Search</button>
@@ -32,34 +33,67 @@
     <section id="viewallproducts">
       <div class="container">
         <div id="main-col">
-
-          	<form  action="">
-          		<div id="newproductdiv">
-          			<h3>Add New Product</h3>
-			        <input type="text" id="pname" name="title" placeholder="name of product..">
-			        <input type="text" id="copies" name="cpoies" placeholder="number of copies..">
-			        <input type="text" id="copies" name="cpoies" placeholder="Minimum copies before restocking..">
-			        <select id="category" name="category">
-			        	<option value="#">Choose category..</option>
-			        	<option value="Textbooks">Textbooks</option>
-			        	<option value="Storybooks">Story Books</option>
-			            <option value="Excercise">Excersice Books</option>
-			            <option value="Novels">Novels</option>
-			        </select>
-			        <textarea id="comment" name="comment" placeholder="Write any comments.."></textarea>
-			        <p><input type="file" name="pic" accept="image/*"></p>
-			        <p><input type="submit" value="Submit"></p>
-			    </div>
-  			</form>
+		<h1>Registered Users</br></h1>
+          <div id="overflow">
+          <table>
+		 <tr>
+			<th></th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Email</th>
+			<th>Priviledge</th>
+			<th>Start Date</th>
+		 </tr>
+		 <tr>
+			<td>1</td>
+			<td>James </td>
+			<td>Atieno</td>
+			<td>james@gmail.com</td>
+			<td>Admin</td>
+			<td>10/8/2018</td>
+		 </tr>
+		  <tr>
+			<td>2</td>
+			<td>Kioko </td>
+			<td>james</td>
+			<td>k@gmail.com</td>
+			<td>User</td>
+			<td>10/8/2017</td>
+		 </tr>
+		  <tr>
+			<td>3</td>
+			<td>Nyasukuta </td>
+			<td>mwari</td>
+			<td>mwari@gmail.com</td>
+			<td>User</td>
+			<td>11/5/2016</td>
+		 </tr>
+		  <tr>
+			<td>4</td>
+			<td>peter </td>
+			<td>Atieno</td>
+			<td>ptere@gmail.com</td>
+			<td>Admin</td>
+			<td>1/8/2013</td>
+		 </tr>
+		 <tr>
+			<td>5</td>
+			<td>alfred </td>
+			<td>mwakazi</td>
+			<td>mwakazi@gmail.com</td>
+			<td>User</td>
+			<td>10/8/2018</td>
+		 </tr>
+          </table>
+          </div>
         </div>
-         <div id="categories">
-          <ul>
+        <div id="categories">
+           <ul>
             <li><b><a href="manage.html">Home</a></b></li><hr>
-            <li><b><a href="sales.html">View Sales</a></b></li><hr>
+            <li><b><a href="addproduct.html">Add Product</a></b></li><hr>
             <li><b><a href="register.html">Add new User</a></b></li><hr>
             <li><b><a href="index.html">Log out</a></b></li><hr>
           </ul>
-          
         </div>
       </div>
     </section>
