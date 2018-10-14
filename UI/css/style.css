@@ -83,7 +83,7 @@ a:hover{
 	margin: 0 auto;
 	border-radius: 5px;
 	color: #C70039;
-  	margin-top: 70px;
+  	margin-top: 80px;
 }
 .regform a{
 	color: #C70039;
@@ -118,7 +118,7 @@ img {
 /*View all products body*/
 #main-col{
 	float: right;
-	width: 79%;
+	width: 77%;
     border-radius: 5px;
     margin-top: 5px;
 }
@@ -222,6 +222,79 @@ input[type=submit] {
 #searchpd{
 	border-radius: 4px;
 	padding: 3px;
+}
+#dashboard{
+	float: right;
+	width: 90%;
+	padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    background: #ffffff;
+}
+#item_detail{
+	float: right;
+}
+
+#dashboard_table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    background: #E8E8EC;
+    margin-top: 13px;
+}
+#chartContainer{
+	background: #ffffff;
+}
+
+/*Sales statistics*/
+#day{
+	float: left;
+}
+#rating{
+	width: 70%; 
+	height: 28px;
+	margin:0 auto;
+}
+#rating1{
+	width: 50%; 
+	height: 28px;
+	float: left;
+	background-color: #2196F3;
+}
+#rating2{
+	width: 30%; 
+	height: 28px;
+	float: left;
+	background-color: #00bcd4;
+}
+#rating3{
+	width: 70%; 
+	height: 28px;
+	float: left;
+	background-color: #4CAF50;
+}
+#rating4{
+	width: 10%; 
+	height: 28px;
+	float: left;
+	background-color: #f44336;
+}
+#rating5{
+	width: 40%; 
+	height: 28px;
+	float: left;
+	background-color: #ff9800;
+}
+#amount{
+	float: right;
+	height: 28px;
+	margin-top: -20px;
+}
+#space{
+	height: 28px; 
+	padding: 18px;
+	background-color: #ffffff;
 }
 /*
 #login-background {
