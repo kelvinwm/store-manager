@@ -1,9 +1,9 @@
-# store-manager
+## store-manager
 
 <code>Store Manager is a web application that helps store owners manage sales and product inventory
 records. This application is meant for use in a single store</code>
   
-# Features:
+## Features:
 1. Store attendant can search and add products to buyer’s cart.
 2. Store attendant can see his/her sale records but can’t modify them.
 3. App should show available products, quantity and price.
@@ -13,7 +13,7 @@ records. This application is meant for use in a single store</code>
 7. Products should have categories.
 8. Store attendants should be able to add products to specific categories.
 
-# point to note:
+## point to note:
 1. This application should help store owners avoid selling products that have run out of
 stock.
 2. The store owner can be referred to as the admin of the application.
