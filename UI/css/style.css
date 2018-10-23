@@ -19,7 +19,7 @@ header{
 	background: #3342FF;
 	color: #ffffff;
 	min-height: 50px;
-	border-bottom: #C70039 3px solid;
+	border-bottom: #000 3px solid;
 	position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100%; 
@@ -40,8 +40,11 @@ header #trademark{
 }
 header nav{
 	float: right;
-	margin-top: 15px;
-	font-size: 12px;
+	font-size: 15px;
+	font-weight: bold;
+}
+nav img{
+	width: 20px;
 }
 .current a{
 	color: #ffffff;
@@ -67,7 +70,6 @@ a:hover{
 	height: 42px;
 	width: 80%;
 	border-radius: 5px;
-	margin-top: 5%
 }
 #entery input[type="email"]{
 	height: 42px;
@@ -103,17 +105,13 @@ a:hover{
 	min-height: 100px;
 	text-align: center;
 	color: #C70039;
-	border-bottom: #C70039 3px solid;
+	border-bottom: #000 3px solid;
 	padding: 16px;
   	margin-top: 40px;
 }
-img {
-    width:25px;
-    height: auto;
-}
 #prdimg{
-	width:100%;
-    height: auto;
+	width:70%;
+    margin: auto;
 }
 /*View all products body*/
 #main-col{
@@ -123,12 +121,12 @@ img {
     margin-top: 5px;
 }
 #main-col h2{
-	background: #C70039;
-	color: #ffffff;
+	color: #000000;
 }
 #design ul{
     list-style-type: none;
     overflow: hidden;
+
 }
 #categories{
 	float: left;
@@ -141,7 +139,13 @@ img {
 #categories li{
     padding-top: 5px;
     list-style: none;
-    color:  #C70039;
+    color:  #000;
+}
+#categories a{
+    padding-top: 5px;
+    list-style: none;
+    font-weight: bold;
+    color:  #000;
 }
 #categories h1{
 	text-align: center;
@@ -150,14 +154,16 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
-    border: 1px solid #ddd;
+    text-align: center;
 }
-
+table, td, th {
+    border: 1px solid black;
+}
 td {
-    padding: 16px;
+    height: 70px;
 }
 tr:nth-child(even) {
-    background-color: #f2f2f2
+    background-color: #f2f2f2;
 }
 #overflow{
 	overflow-x:auto;
@@ -169,10 +175,25 @@ tr:nth-child(even) {
 	font-weight: bold;
 	background: #C70039
 }
-.singleproduct img{
-	width:50%;
-    height: auto
-    padding:10px;
+.product{
+    border: 1px solid #000;
+    width: 80%;
+}
+.grid-container{
+	 display: grid;
+	 grid-template-columns: 245px 245px 245px 245px;
+	 grid-template-rows: 250px 250px 250px 250px;
+	 grid-gap: 10px;
+	 padding: 2px;
+}
+.grid-container > div {
+	border: 1px solid #000;
+}
+.product p{
+	text-align: center;
+}
+.main-col img{
+	width:100%;
 }
 #productdetails{
 	margin-left: 50%
@@ -185,7 +206,7 @@ tr:nth-child(even) {
 	margin: 6px;
 }
 .cartbtn{
-	width: 100%;
+	width: 70%;
 	height: 38px;
 	padding-left: 30px;
 	padding-right: 30px;
@@ -198,7 +219,7 @@ tr:nth-child(even) {
 	width: 60%;
 	padding-top: 20px;
 	min-height: 474px;
-	margin: 0 auto;
+	margin-left: 70px;
 	border-radius: 5px;
 	color: #C70039;
 
@@ -220,8 +241,7 @@ input[type=submit] {
     cursor: pointer;
 }
 #searchpd{
-	border-radius: 4px;
-	padding: 3px;
+	border-radius: 5px;
 }
 #dashboard{
 	float: right;
@@ -238,9 +258,8 @@ input[type=submit] {
 #dashboard_table {
     border-collapse: collapse;
     border-spacing: 0;
-    width: 100%;
+    width: 98%;
     border: 1px solid #ddd;
-    background: #E8E8EC;
     margin-top: 13px;
 }
 #chartContainer{
@@ -295,6 +314,23 @@ input[type=submit] {
 	height: 28px; 
 	padding: 18px;
 	background-color: #ffffff;
+}
+figure{
+	border: thin black solid;
+	width: 23%; float: left; margin: 8px;
+}
+figure img{
+	width: 90%;
+}
+figure p{
+	text-align: center;
+}
+figcaption{margin-left:15px;}
+#cat_header{
+	margin-left: 15px;
+}
+#list_div img{
+	width: 30px;
 }
 /*
 #login-background {
