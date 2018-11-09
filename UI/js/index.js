@@ -209,3 +209,40 @@ function addproduct(){
 	})
 	.catch(error => console.error('Error:', error));
 }
+function products(){
+	fetch(`https://store-manager-api-db.herokuapp.com/api/v2/products`)
+	  .then((res)=> res.json())
+	  .then((data) => {
+	  	if (data["message"]=="Internal Server Error"){
+	  		alert("Error loading data, check internet connection");
+	  	}
+	  	console.log(data);
+	  	data["All products"].forEach(function(user){
+	  		let table = document.getElementById("userstable");
+		    let row = table.insertRow();
+		    let cell1 = row.insertCell(0);
+		    let cell2 = row.insertCell(1);
+		    let cell3 = row.insertCell(2);
+		    let cell4 = row.insertCell(3);
+		    let cell5 = row.insertCell(4);
+		    let cell6 = row.insertCell(5);
+		    let cell7 = row.insertCell(6);
+		    cell1.innerHTML = user.Id;
+		    cell2.innerHTML = user.product_name;
+		    cell3.innerHTML = user.quantity;
+		    cell4.innerHTML = user.price;
+		    cell5.innerHTML = user.category;
+		    cell6.innerHTML =  `<img style="cursor: pointer;" src="img/troller.png" alt="add to cart">`;
+		    cell7.innerHTML = `<img style="cursor: pointer;" src="img/edit.png" alt="edit cart">`;
+		    cell6.onclick = function (event){
+		    	loadpopup();
+		    	document.getElementById("id_no").value = user.Id;
+		    	document.getElementById("product_name").value = user.product_name;
+		    	document.getElementById("quantity").value = user.quantity;
+		    	document.getElementById("price").value = user.price;
+		    	document.getElementById("product_category").value = user.category;
+		    }
+	  	});
+	  })
+	  .catch((err)=> console.log(err))
+ }
