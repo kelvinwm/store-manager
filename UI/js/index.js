@@ -275,3 +275,27 @@ function products(){
 	})
 	.catch(error => console.error('Error:', error));
 }
+function deleteproduct(){
+	let id_no=document.getElementById("id_no").value;
+	let url = 'https://store-manager-api-db.herokuapp.com/api/v2/products/'.concat(id_no) ;
+	
+	fetch(url, {
+	  method: 'DELETE',
+	   body: JSON.stringify(""),
+	  headers:{
+	    'Content-Type': 'application/json',
+	    'access-token': mytoken
+	  }
+	}).then(res => res.json())
+	.then(response => {
+		if (response["message"]!="Product deleted successfully"){
+			return alert(response["message"]);
+		}else{
+			alert(response["message"]);
+			closeform();
+			let url= "home.html"; 
+    		window.location = url;
+		}
+	})
+	.catch(error => console.error('Error:', error));
+}
