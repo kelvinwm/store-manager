@@ -177,3 +177,35 @@ function logout(){
 	})
 	.catch(error => console.error('Error:', error));
 }
+/*Add new product*/
+function addproduct(){
+	let product_name=document.getElementById("product_name").value;
+	let quantity=document.getElementById("quantity").value;
+	let price=document.getElementById("price").value;
+	let product_category=document.getElementById("product_category").value;
+	let url = 'https://store-manager-api-db.herokuapp.com/api/v2/products';
+	let data = {product_name: product_name,
+				quantity: quantity,
+				price: price,
+				category: product_category};
+	fetch(url, {
+	  method: 'POST',
+	  body: JSON.stringify(data),
+	  headers:{
+	    'Content-Type': 'application/json',
+	    'access-token': mytoken
+	  }
+	}).then(res => res.json())
+	.then(response => {
+		if (response["message"]!="Product added successfully"){
+			return alert(response["message"]);
+		}else{
+			document.getElementById("product_name").value ="";
+	    	document.getElementById("quantity").value = "";
+	    	document.getElementById("price").value = "";
+	    	document.getElementById("product_category").value ="Choose category..";
+			return alert(response["message"]);
+		}
+	})
+	.catch(error => console.error('Error:', error));
+}
