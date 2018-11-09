@@ -82,6 +82,10 @@ function users(){
 	  })
 	  .catch((err)=> console.log(err))
  }
+function loadpopup(){
+	let updateform = document.getElementById("form-popup");
+	updateform.style.display = "block";
+	}
 function edituser(){
 	let id_no=document.getElementById("id_no").value;
 	let fname=document.getElementById("first_name").value;
