@@ -177,3 +177,125 @@ function logout(){
 	})
 	.catch(error => console.error('Error:', error));
 }
+/*Add new product*/
+function addproduct(){
+	let product_name=document.getElementById("product_name").value;
+	let quantity=document.getElementById("quantity").value;
+	let price=document.getElementById("price").value;
+	let product_category=document.getElementById("product_category").value;
+	let url = 'https://store-manager-api-db.herokuapp.com/api/v2/products';
+	let data = {product_name: product_name,
+				quantity: quantity,
+				price: price,
+				category: product_category};
+	fetch(url, {
+	  method: 'POST',
+	  body: JSON.stringify(data),
+	  headers:{
+	    'Content-Type': 'application/json',
+	    'access-token': mytoken
+	  }
+	}).then(res => res.json())
+	.then(response => {
+		if (response["message"]!="Product added successfully"){
+			return alert(response["message"]);
+		}else{
+			document.getElementById("product_name").value ="";
+	    	document.getElementById("quantity").value = "";
+	    	document.getElementById("price").value = "";
+	    	document.getElementById("product_category").value ="Choose category..";
+			return alert(response["message"]);
+		}
+	})
+	.catch(error => console.error('Error:', error));
+}
+/* get all products*/
+function products(){
+	fetch(`https://store-manager-api-db.herokuapp.com/api/v2/products`)
+	  .then((res)=> res.json())
+	  .then((data) => {
+	  	if (data["message"]=="Internal Server Error"){
+	  		alert("Error loading data, check internet connection");
+	  	}
+	  	console.log(data);
+	  	data["All products"].forEach(function(user){
+	  		let table = document.getElementById("userstable");
+		    let row = table.insertRow();
+		    let cell1 = row.insertCell(0);
+		    let cell2 = row.insertCell(1);
+		    let cell3 = row.insertCell(2);
+		    let cell4 = row.insertCell(3);
+		    let cell5 = row.insertCell(4);
+		    let cell6 = row.insertCell(5);
+		    let cell7 = row.insertCell(6);
+		    cell1.innerHTML = user.Id;
+		    cell2.innerHTML = user.product_name;
+		    cell3.innerHTML = user.quantity;
+		    cell4.innerHTML = user.price;
+		    cell5.innerHTML = user.category;
+		    cell6.innerHTML =  `<img style="cursor: pointer;" src="img/troller.png" alt="add to cart">`;
+		    cell7.innerHTML = `<img style="cursor: pointer;" src="img/edit.png" alt="edit cart">`;
+		    cell7.onclick = function (event){
+		    	loadpopup();
+		    	document.getElementById("id_no").value = user.Id;
+		    	document.getElementById("product_name").value = user.product_name;
+		    	document.getElementById("quantity").value = user.quantity;
+		    	document.getElementById("price").value = user.price;
+		    	document.getElementById("product_category").value = user.category;
+		    }
+	  	});
+	  })
+	  .catch((err)=> console.log(err))
+ }
+ function editproduct(){
+	let id_no=document.getElementById("id_no").value;
+    let quantity = document.getElementById("quantity").value;
+	let price = document.getElementById("price").value;
+	let category = document.getElementById("product_category").value;
+	let url = 'https://store-manager-api-db.herokuapp.com/api/v2/products/'.concat(id_no) ;
+	let data = {quantity: quantity,
+				price: price,
+				category: category};
+	fetch(url, {
+	  method: 'PUT',
+	  body: JSON.stringify(data),
+	  headers:{
+	    'Content-Type': 'application/json',
+	    'access-token': mytoken
+	  }
+	}).then(res => res.json())
+	.then(response => {
+		// check on negavite entries and validations
+		if (response["message"]!="Updated successfully"){
+			return alert(response["message"]);
+		}else{
+			alert(response["message"]);
+			return closeform();
+		}
+	})
+	.catch(error => console.error('Error:', error));
+}
+function deleteproduct(){
+	let id_no=document.getElementById("id_no").value;
+	let url = 'https://store-manager-api-db.herokuapp.com/api/v2/products/'.concat(id_no) ;
+	
+	fetch(url, {
+	  method: 'DELETE',
+	   body: JSON.stringify(""),
+	  headers:{
+	    'Content-Type': 'application/json',
+	    'access-token': mytoken
+	  }
+	}).then(res => res.json())
+	.then(response => {
+		if (response["message"]!="Product deleted successfully"){
+			return alert(response["message"]);
+		}else{
+			alert(response["message"]);
+			closeform();
+			let url= "home.html"; 
+    		window.location = url;
+		}
+	})
+	.catch(error => console.error('Error:', error));
+}
