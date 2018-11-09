@@ -67,6 +67,33 @@
         </div>
       </div>
     </section>
+     <div id="form-popup">
+        <div class="regform" >
+            <span class="close" onclick="closeform()">&times;</span>
+            <h2>User Update</h2><hr><br>
+            <form id="registerfrom">
+                <div id="entery"><label>Id:</label><br>
+                   <input type="text" id="id_no" disabled>
+                </div>
+                <div id="entery"><label>Product Name:</label><br>
+                   <input type="text" id="product_name" required disabled>
+                </div>
+                <div id="entery"><label>quantity:</label><br>
+                   <input type="number" id="quantity" required>
+                </div>
+                <div id="entery"><label>price:</label><br>
+                   <input type="number" id="price" required>
+                </div>
+                <div id="entery"><label>product category:</label><br>
+                   <input type="text" id="product_category" required>
+                </div>
+                <div  id="entery">
+                    <button type="button" onclick="deleteproduct()" class="button_reg">Delete</button>
+                    <button type="button" onclick="editproduct()" class="button_reg">Update</button>
+                </div>
+            </form>
+        </div>
+      </div>
     <footer>
       <p>Store Manager Copyright &copy; 2018</p>
     </footer>

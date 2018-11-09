@@ -209,6 +209,7 @@ function addproduct(){
 	})
 	.catch(error => console.error('Error:', error));
 }
+/* get all products*/
 function products(){
 	fetch(`https://store-manager-api-db.herokuapp.com/api/v2/products`)
 	  .then((res)=> res.json())
@@ -234,7 +235,7 @@ function products(){
 		    cell5.innerHTML = user.category;
 		    cell6.innerHTML =  `<img style="cursor: pointer;" src="img/troller.png" alt="add to cart">`;
 		    cell7.innerHTML = `<img style="cursor: pointer;" src="img/edit.png" alt="edit cart">`;
-		    cell6.onclick = function (event){
+		    cell7.onclick = function (event){
 		    	loadpopup();
 		    	document.getElementById("id_no").value = user.Id;
 		    	document.getElementById("product_name").value = user.product_name;
@@ -246,3 +247,31 @@ function products(){
 	  })
 	  .catch((err)=> console.log(err))
  }
+ function editproduct(){
+	let id_no=document.getElementById("id_no").value;
+    let quantity = document.getElementById("quantity").value;
+	let price = document.getElementById("price").value;
+	let category = document.getElementById("product_category").value;
+	let url = 'https://store-manager-api-db.herokuapp.com/api/v2/products/'.concat(id_no) ;
+	let data = {quantity: quantity,
+				price: price,
+				category: category};
+	fetch(url, {
+	  method: 'PUT',
+	  body: JSON.stringify(data),
+	  headers:{
+	    'Content-Type': 'application/json',
+	    'access-token': mytoken
+	  }
+	}).then(res => res.json())
+	.then(response => {
+		// check on negavite entries and validations
+		if (response["message"]!="Updated successfully"){
+			return alert(response["message"]);
+		}else{
+			alert(response["message"]);
+			return closeform();
+		}
+	})
+	.catch(error => console.error('Error:', error));
+}
