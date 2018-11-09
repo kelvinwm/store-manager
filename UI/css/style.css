@@ -71,7 +71,7 @@ a:hover{
 	width: 80%;
 	border-radius: 5px;
 }
-#entery input[type="email"]{
+#entery input[type="email"], input[type="text"], input[type="number"]{
 	height: 42px;
 	width: 80%;
 	border-radius: 5px;
@@ -94,7 +94,7 @@ a:hover{
 	padding: 15px;
 
 }
-#button_reg{
+.button_reg{
 	height: 38px;
 	padding-left: 30px;
 	padding-right: 30px;
@@ -224,7 +224,7 @@ tr:nth-child(even) {
 	color: #C70039;
 
 }
-#pname, #copies, #category, textarea {
+#pname, #copies, #product_category, textarea {
 	 height: 42px;
 	 margin-top: 6px;
 	 width: 80%;
@@ -331,6 +331,41 @@ figcaption{margin-left:15px;}
 }
 #list_div img{
 	width: 30px;
+}
+#form-popup {
+    display: none; 
+    position: fixed; 
+    width: 100%; 
+    left: 0;
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+    z-index: 1; /* Sit on top */
+    top: 0;
+}
+/* The Close form */
+.close {
+    color: #aaaaaa;
+    float: right;
+    margin-right:10px;
+    font-size: 48px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: #C70039;
+    text-decoration: none;
+    cursor: pointer;
+}
+#logout{
+	font-weight: bold;
+	background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    font-size: 16px;
 }
 /*
 #login-background {

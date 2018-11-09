@@ -3,7 +3,11 @@
   <head>
     <title>Store Manager</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/index.js"></script>
   </head>
+  <script>
+    documentonload();
+  </script>
   <body>
     <header>
       <div class="container">
@@ -16,7 +20,7 @@
             <input type="text" id="searchpd" name="search" placeholder="Search any product">
             </form></li>
             <li class="current"><a href="home.html">Home</a></li>
-            <li><a href="index.html">Sign out</a></li>
+            <li><button style="color: white;" id="logout" onclick="logout()"> Sign out</button></li>
             <li><a href="cart.html"><img src="img/troller.png" alt="buyers cart"></a></li>
             <li><img src="img/ac.jpg" alt="buyers cart"></li>
           </ul>

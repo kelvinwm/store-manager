@@ -1,10 +1,13 @@
-
 <!DOCTYPE html>
 <html>
   <head>
     <title>Store Manager</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/index.js"></script>
   </head>
+  <script>
+    documentonload();
+  </script>
   <body>
     <header>
       <div class="container">
@@ -32,27 +35,25 @@
       <div class="container">
         <div id="main-col">
 
-          	<form  action="">
+          	<form>
           		<div id="newproductdiv">
           			<h3>Add New Product</h3>
                 <label>Product name:</label><br>
-			        <input type="text" id="pname" name="title" placeholder="name of product.."><br>
-              <label>Quantity:</label><br>
-			        <input type="text" id="copies" name="cpoies" placeholder="number of copies.."><br>
-              <label>Minimum expected Quantity:</label><br>
-			        <input type="text" id="copies" name="cpoies" placeholder="Minimum copies before restocking.."><br>
-              <label>Choose Category:</label><br>
-			        <select id="category" name="category">
-			        	<option value="#">Choose category..</option>
-			        	<option value="Textbooks">Textbooks</option>
-			        	<option value="Storybooks">Story Books</option>
-			            <option value="Excercise">Excersice Books</option>
-			            <option value="Novels">Novels</option>
-			        </select><br>
-              <label>Any Comment:</label><br>
-			        <textarea id="comment" name="comment" placeholder="Write any comments.."></textarea>
-			        <p><input type="file" name="pic" accept="image/*"></p>
-			        <p><input type="submit" value="Submit"></p>
+  			        <input type="text" id="product_name" required placeholder="name of product.."><br>
+                <label>Price:</label><br>
+                <input type="number" id="price" placeholder="Price per item...."><br>
+                <label>Quantity:</label><br>
+  			        <input type="number" id="quantity" placeholder="number of copies.."><br>
+                <label>Choose Category:</label><br>
+  			        <select id="product_category">
+  			        	<option value="#">Choose category..</option>
+  			        	<option value="Textbooks">Textbooks</option>
+  			        	<option value="Storybooks">StoryBooks</option>
+  			          <option value="Excercise">Excersice</option>
+  			          <option value="Novels">Novels</option>
+  			        </select><br>
+  			        <p><input type="file"accept="image/*"></p>
+  			        <p><button type="button" onclick="addproduct()" class="button_reg">Submit</button> </p>
 			    </div>
   			</form>
         </div>
