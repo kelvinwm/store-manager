@@ -659,3 +659,32 @@ function viewsales(){
 	  })
 	  .catch((err)=> console.log(err))
  }
+ /*DELETE A SALE*/
+ function deletesale(id_no){
+ 	documentonload();
+ 	adminload();
+	let url = 'http://127.0.0.1:5000/api/v2/sales/'.concat(id_no) ;
+	let del = confirm("Delete Sale record!");
+    if (del == false) {
+        return;
+    }
+	fetch(url, {
+		method: 'DELETE',
+		body: JSON.stringify(""),
+	    headers:{
+	    	'Content-Type': 'application/json',
+	    	'access-token': mytoken
+	    }
+	}).then(res => res.json())
+	.then(response => {
+		checkconnection(response);
+		if (response["message"]!="Sales deleted successfully"){
+			return alert(response["message"]);
+		}else{
+			alert(response["message"]);
+			let url= "sales.html"; 
+    		window.location = url;
+		}
+	})
+	.catch(error => console.error('Error:', error));
+}
