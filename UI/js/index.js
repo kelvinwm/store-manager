@@ -448,7 +448,7 @@ function deleteproduct(theurl, pageurl){
 	adminload();
 	let id_no=document.getElementById("id_no").value;
 	let url =theurl.concat(id_no) ;
-	let del = confirm("Delete!");
+	let del = confirm("Delete Product!");
     if (del == false) {
         return;
     }
