@@ -17,12 +17,10 @@
         <nav>
           <ul>
             <li> <form>
-            <input type="text" id="searchpd" name="search" placeholder="Search any product">
+            <input type="search" id="searchpd" name="search" placeholder="Search any product">
             </form></li>
-            <li class="current"><a href="home.html">Home</a></li>
-            <li><button style="color: white;" id="logout" onclick="logout()"> Sign out</button></li>
-            <li><a href="cart.html"><img src="img/troller.png" alt="buyers cart"></a></li>
-            <li><img src="img/ac.jpg" alt="buyers cart"></li>
+            <li style="text-align: center; color:#C70039;"><a href="cart.html"><img src="img/troller.png"alt="buyers cart"></a><br><i id="itemincart">5</i></li>
+            <li style="text-align: center;"><img src="img/ac.jpg" alt="myaccount"> <br><i id="myemail">myaccount@here.com</i></li>
           </ul>
           
         </nav>
@@ -55,14 +53,15 @@
         </div>
         <div id="categories">
           <ul>
-            <li><button id="logout"> Dash Board</button></li><hr>
-            <li><b><a href="mysales.html">My Sale Records</a></b></li><hr>
+            <li><button onclick="accessdashboard()" id="logout">Dash Board</button></li><hr>
+            <li><b><a href="sales.html">My Sale Records</a></b></li><hr>
             <li><b><h4 style="color: blue;">SHOW CATEGORIES</h4></b></li><hr>
             <li><a href="#textbooks">Text Books</a></li><hr>
             <li><a href="#novels">Novels</a></li><hr>
             <li><a href="#pencils">Pencils</a></li><hr>
             <li><a href="#excercisebooks">Excercise Books</a></li><hr>
             <li><a href="#storybooks">Story Books</a></li><hr>
+            <li><button id="logout" onclick="logout()">Logout</button></li>
           </ul>
         </div>
       </div>
@@ -88,12 +87,29 @@
                    <input type="text" id="product_category" required>
                 </div>
                 <div  id="entery" style="padding-top: 5px;">
-                    <button type="button" onclick="deleteproduct()" class="button_reg">Delete</button>
+                    <button type="button" onclick="deleteproduct('http://127.0.0.1:5000/api/v2/products/', 'home.html')" class="button_reg">Delete</button>
                     <button type="button" onclick="editproduct()" class="button_reg">Update</button>
                 </div>
             </form>
         </div>
       </div>
+        <div id="form-cart">
+            <div class="regform" style="min-height: 385px;">
+                <span class="close" onclick="closecart()">&times;</span>
+                <h2>Add To Cart</h2><hr><br>
+                <form id="registerfrom">
+                    <div id="entery"><label>Product Name:</label><br>
+                       <input style="font-weight: bold;" type="text" id="prod_name" disabled>
+                    </div>
+                    <div id="entery"><label>Quantity</label><br>
+                       <input type="number" id="prod_quantity" required>
+                    </div>
+                    <div  id="entery">
+                        <button type="button" onclick="addtocart()" style="margin-top: 10px;"class="button_reg">Add to Cart</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     <footer>
       <p>Store Manager Copyright &copy; 2018</p>
     </footer>

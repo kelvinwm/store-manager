@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Store Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/index.js"></script>
+  </head>
+  <script>
+    documentonload();
+  </script>
+  <body onload="categories()">
+    <header>
+      <div class="container">
+        <div id="trademark">
+          <h1>Store Manager</h1>
+        </div>
+        <nav>
+        	<ul>
+        		<li>
+        		<form>
+	            <input type="search" id="searchpd" name="search" placeholder="Search.....">
+	            </form></li>
+	            <li><b><a href="manage.html">Home</a></b></li>
+	            <li><button id="logout" style="color: white" onclick="logout()">Sign out</button></li>
+	            <li><img src="img/ac.jpg" alt="account"></li>
+           </ul>
+        </nav>
+      </div> 
+    </header>
+    <section id="systemimage">
+      <div class="container">
+        <h1>Store Manager </br></h1>
+        <p>Best system to manage and track your sales</p>
+        
+      </div>
+    </section>
+    <section id="viewallproducts">
+      <div class="container">
+        <div class="viewdesign">
+        	<h1><button id="logout" onclick="popformcart()"># Add new category</button></h1>
+			<h1>Categories</br></h1>
+	          <div id="overflow">
+	          	<table border="1" id="categories_table">
+	          	    <tr>
+					 	<th></th>
+						<th>Category Name</th>
+						<th>Date</th>
+						<th>Modify</th>
+					 </tr>
+		         </table>
+	          </div>
+        </div>
+      </div>
+    </section>
+        <div id="form-popup">
+        <div class="regform" >
+            <span class="close" onclick="closeform()">&times;</span>
+            <h2>Category details</h2><hr><br>
+            <form id="registerfrom" style="padding-top: 15px;">
+                <div id="entery"><label>Id:</label><br>
+                   <input type="text" id="id_no" disabled>
+                </div>
+                <div id="entery"><label>Category Name:</label><br>
+                   <input type="text" id="category_name" required>
+                </div>
+                <div id="entery" style="padding-top: 25px;">
+                    <button type="button" onclick="deleteproduct('http://127.0.0.1:5000/api/v2/category/', 'categories.html')" class="button_reg">Delete</button>
+                    <button type="button" onclick="editcategory()" class="button_reg">Update</button>
+                </div>
+            </form>
+        </div>
+      </div>
+      <div id="form-cart">
+        <div class="regform" >
+            <span class="close" onclick="closecart()">&times;</span>
+            <h2>Category details</h2><hr><br>
+            <form id="registerfrom" style="padding-top: 15px;">
+                <div  style="padding-top: 15px;" id="entery"><label>Category Name:</label><br>
+                   <input type="text" id="newcategory_name" required>
+                </div>
+                <div id="entery" style="padding-top: 45px;">
+                    <button type="button" onclick="addnewcategory()" class="button_reg">Submit</button>
+                </div>
+            </form>
+        </div>
+      </div>
+    <footer>
+      <p>Store Manager Copyright &copy; 2018</p>
+    </footer>
+  </body>
+</html>
