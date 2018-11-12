@@ -6,23 +6,20 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/index.js"></script>
   </head>
-  <script>
-    documentonload();
-  </script>
-  <body>
+  <body onload="viewsales()">
     <header>
       <div class="container">
         <div id="trademark">
           <h1>Store Manager</h1>
         </div>
         <nav>
-         
-          <ul>
-            <li> <form>
-            <input type="text" id="searchpd" name="search" placeholder="Search.....">
-            </form></li>
-            <li><img src="img/ac.jpg" alt="buyers cart"></li>
-          </ul>
+        	<ul>
+	            <li> <form>
+	            <input type="search" id="searchpd" name="search" placeholder="Search.....">
+	            </form></li>
+	            <li><img src="img/ac.jpg" alt="buyers cart"></li>
+	            <li><b><a href="home.html">Home</a></b></li>
+          	</ul>
         </nav>
       </div> 
     </header>
@@ -35,75 +32,21 @@
     </section>
     <section id="viewallproducts">
       <div class="container">
-        <div id="main-col">
-		<h1>All Sales</br></h1>
+        <div class="viewdesign">
+		<h1 id="allsales">Sale Records</br></h1>
           <div id="overflow">
-          <table>
-		 <tr><th></th>
-			<th>Attendant Name</th>
-			<th>Product Name</th>
-			<th>Quantity</th>
-			<th>Cost per Unit</th>
-			<th>Total Cost</th>
-			<th>Date</th>
-		 </tr>
-		 <tr>
-			<td>1</td>
-			<td>James Atieno</td>
-			<td>Jesma English</td>
-			<td>1</td>
-			<td>700</td>
-			<td>700</td>
-			<td>10/8/2018</td>
-		 </tr>
-		  <tr>
-			<td>2</td>
-			<td>John Musau</td>
-			<td>Born A crime</td>
-			<td>2</td>
-			<td>1500</td>
-			<td>3000</td>
-			<td>10/8/2018</td>
-		 </tr>
-		  <tr>
-			<td>3</td>
-			<td>Vicent Mwanza</td>
-			<td>Javascript for Dummies</td>
-			<td>1</td>
-			<td>2000</td>
-			<td>2000</td>
-			<td>10/8/2018</td>
-		 </tr>
-		  <tr>
-			<td>4</td>
-			<td>Janet Chesang</td>
-			<td>Happy marriage</td>
-			<td>2</td>
-			<td>500</td>
-			<td>1000</td>
-			<td>10/8/2018</td>
-		 </tr>
-		 <tr>
-			<td>5</td>
-			<td>James Atieno</td>
-			<td>My Life in Prison</td>
-			<td>1</td>
-			<td>1000</td>
-			<td>1000</td>
-			<td>10/8/2018</td>
-		 </tr>
+          <table id="salestable">
+			 <tr><th></th>
+				<th>Attendant Name</th>
+				<th>Product Name</th>
+				<th>Quantity</th>
+				<th>Total Cost</th>
+				<th>Date</th>
+				<th>Delete</th>
+			 </tr>
           </table>
           </div>
         </div>
-        <div id="categories">
-           <ul>
-            <li><b><a href="manage.html">Home</a></b></li><hr>
-            <li><b><a href="addproduct.html">Add Product</a></b></li><hr>
-            <li><b><a href="register.html">Add new User</a></b></li><hr>
-            <li><b><a href="index.html">Log out</a></b></li><hr>
-          </ul>
-        </div>
-      </div>
     </section>
     <footer>
       <p>Store Manager Copyright &copy; 2018</p>

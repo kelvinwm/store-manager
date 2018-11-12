@@ -6,9 +6,6 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/index.js"></script>
   </head>
-  <script>
-    documentonload();
-  </script>
   <body onload="users()">
     <header>
       <div class="container">
@@ -17,9 +14,11 @@
         </div>
         <nav>
           <ul>
-            <li> <form>
-            <input type="text" id="searchpd" name="search" placeholder="Search.....">
+            <li><form>
+            <input type="search" name="search" id="searchpd" placeholder="Search cart">
             </form></li>
+            <li class="current"><a href="home.html">Home</a></li>
+            <li><button id="logout" style="color: white" onclick="logout()">Sign out</button></li>
             <li><img src="img/ac.jpg" alt="Account"></li>
           </ul>
         </nav>
@@ -34,7 +33,7 @@
     </section>
     <section id="viewallproducts">
       <div class="container">
-        <div id="main-col">
+        <div class="viewdesign">
 		<h1>Registered Users</br></h1>
           <div id="overflow">
           	<div id= "list_div">
@@ -51,14 +50,6 @@
   	          </table>
 	          </div>
           </div>
-        </div>
-        <div id="categories">
-           <ul>
-            <li><b><a href="manage.html">Home</a></b></li><hr>
-            <li><b><a href="addproduct.html">Add Product</a></b></li><hr>
-            <li><b><a href="register.html">Add new User</a></b></li><hr>
-            <li><button style="color: black;" id="logout" onclick="logout()">Log out</button></li>
-          </ul>
         </div>
       </div>
     </section>
@@ -83,7 +74,7 @@
 		           <input type="text" id="new-category" required>
 		        </div>
 		        <div  id="entery">
-		            <button type="button" onclick="edituser()" class="button_reg">Submit</button>
+		            <button type="button" onclick="edituser()" class="button_reg">Update</button>
 		        </div>
 	        </form>
         </div>

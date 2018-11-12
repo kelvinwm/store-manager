@@ -8,7 +8,7 @@
   <script>
     documentonload();
   </script>
-  <body>
+  <body onload="adminload()">
     <header>
       <div class="container">
         <div id="trademark">
@@ -16,10 +16,9 @@
         </div>
         <nav>
          <ul>
-            <li> <form>
-            <input type="text" id="searchpd" name="search" placeholder="Search.....">
-            </form></li>
-            <li><img src="img/ac.jpg" alt="buyers cart"></li>
+            <li><b><a href="manage.html">Home</a></b></li>
+            <li><button id="logout" style="color: white" onclick="logout()">Sign out</button></li>
+            <li><img src="img/ac.jpg" alt="account"></li>
           </ul>
         </nav>
       </div> 
@@ -56,15 +55,6 @@
   			        <p><button type="button" onclick="addproduct()" class="button_reg">Submit</button> </p>
 			    </div>
   			</form>
-        </div>
-         <div id="categories">
-          <ul>
-            <li><b><a href="manage.html">Home</a></b></li><hr>
-            <li><b><a href="sales.html">View Sales</a></b></li><hr>
-            <li><b><a href="register.html">Add new User</a></b></li><hr>
-            <li><b><a href="index.html">Log out</a></b></li><hr>
-          </ul>
-          
         </div>
       </div>
     </section>
