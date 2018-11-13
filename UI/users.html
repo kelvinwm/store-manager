@@ -4,20 +4,22 @@
   <head>
     <title>Store Manager</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/index.js"></script>
   </head>
-  <body>
+  <body onload="users()">
     <header>
       <div class="container">
         <div id="trademark">
           <h1>Store Manager</h1>
         </div>
         <nav>
-         
           <ul>
-            <li> <form>
-            <input type="text" id="searchpd" name="search" placeholder="Search.....">
+            <li><form>
+            <input type="search" name="search" id="searchpd" placeholder="Search cart">
             </form></li>
-            <li><img src="img/ac.jpg" alt="Account"></li>
+            <li class="current"><a href="home.html">Home</a></li>
+            <li><button id="logout" style="color: white" onclick="logout()">Sign out</button></li>
+            <li style="text-align: center;"><img src="img/ac.jpg" alt="myaccount"> <br><i id="myemail">myaccount@here.com</i></li>
           </ul>
         </nav>
       </div> 
@@ -31,79 +33,52 @@
     </section>
     <section id="viewallproducts">
       <div class="container">
-        <div id="main-col">
+        <div class="viewdesign">
 		<h1>Registered Users</br></h1>
           <div id="overflow">
           	<div id= "list_div">
-	          <table>
-					 <tr>
-						<th></th>
-						<th>First Name</th>
-						<th>Last Name</th>
-						<th>Email</th>
-						<th>Priviledge</th>
-						<th>Start Date</th>
-						<th>Modify</th>
-					 </tr>
-					 <tr>
-						<td>1</td>
-						<td>James </td>
-						<td>Atieno</td>
-						<td>james@gmail.com</td>
-						<td>Admin</td>
-						<td>10/8/2018</td>
-						<td><a href=""><img src="img/edit.png" alt="edit cart"></a></td>
-					 </tr>
-					  <tr>
-						<td>2</td>
-						<td>Kioko </td>
-						<td>james</td>
-						<td>k@gmail.com</td>
-						<td>User</td>
-						<td>10/8/2017</td>
-						<td><a href=""><img src="img/edit.png" alt="edit cart"></a></td>
-					 </tr>
-					  <tr>
-						<td>3</td>
-						<td>Nyasukuta </td>
-						<td>mwari</td>
-						<td>mwari@gmail.com</td>
-						<td>User</td>
-						<td>11/5/2016</td>
-						<td><a href=""><img src="img/edit.png" alt="edit cart"></a></td>
-					 </tr>
-					  <tr>
-						<td>4</td>
-						<td>peter </td>
-						<td>Atieno</td>
-						<td>ptere@gmail.com</td>
-						<td>Admin</td>
-						<td>1/8/2013</td>
-						<td><a href=""><img src="img/edit.png" alt="edit cart"></a></td>
-					 </tr>
-					 <tr>
-						<td>5</td>
-						<td>alfred </td>
-						<td>mwakazi</td>
-						<td>mwakazi@gmail.com</td>
-						<td>User</td>
-						<td>10/8/2018</td>
-						<td><a href=""><img src="img/edit.png" alt="edit cart"></a></td>
-					 </tr>
-	          </table>
-	        </div>
+  	          <table id="userstable">
+    					 <tr>
+    						<th></th>
+    						<th>First Name</th>
+    						<th>Last Name</th>
+    						<th>Email</th>
+    						<th>Admin</th>
+    						<th>Start Date</th>
+    						<th>Modify</th>
+    					 </tr>
+  	          </table>
+	          </div>
           </div>
-        </div>
-        <div id="categories">
-           <ul>
-            <li><b><a href="manage.html">Home</a></b></li><hr>
-            <li><b><a href="addproduct.html">Add Product</a></b></li><hr>
-            <li><b><a href="register.html">Add new User</a></b></li><hr>
-            <li><b><a href="index.html">Log out</a></b></li><hr>
-          </ul>
         </div>
       </div>
     </section>
+      <div id="form-popup">
+      	<div class="regform" >
+      		<span class="close" onclick="closeform()">&times;</span>
+	        <h2>User Update</h2><hr><br>
+	        <form id="registerfrom">
+	        	<div id="entery"><label>Id:</label><br>
+		           <input type="text" id="id_no" disabled>
+		        </div>
+	        	<div id="entery"><label>First Name:</label><br>
+		           <input type="text" id="first_name" required>
+		        </div>
+		        <div id="entery"><label>Last Name:</label><br>
+		           <input type="text" id="last-name" required>
+		        </div>
+		        <div id="entery"><label>Email:</label><br>
+		           <input type="email" id="new-email" required>
+		        </div>
+		        <div id="entery"><label>Role:</label><br>
+		           <input type="text" id="new-category" required>
+		        </div>
+		        <div  id="entery">
+		            <button type="button" onclick="edituser()" class="button_reg">Update</button>
+		        </div>
+	        </form>
+        </div>
+      </div>
     <footer>
       <p>Store Manager Copyright &copy; 2018</p>
     </footer>

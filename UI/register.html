@@ -5,7 +5,10 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/index.js"></script>
   </head>
-  <body>
+  <script>
+    documentonload();
+  </script>
+  <body onload="adminload()">
     <header>
       <div class="container">
         <div id="trademark">
@@ -13,12 +16,8 @@
         </div>
         <nav>
           <ul>
-            <li> <form>
-            <input type="text" id="searchpd" name="search" placeholder="Search any product">
-            <button type="button" class="btn">Search</button>
-            </form></li>
             <li><a href="manage.html"><b>Home</b></a></li>
-            <li><img src="img/ac.jpg" alt="buyers cart"><br></li>
+            <li style="text-align: center;"><img src="img/ac.jpg" alt="myaccount"> <br><i id="myemail">myaccount@here.com</i></li>
           </ul>
         </nav>
       </div> 
@@ -31,34 +30,31 @@
         <hr>
         <br>
         <form id="registerfrom">
-
+          <div id="entery"><label>First Name:</label><br>
+               <input type="text" id="first-name" placeholder="first name" required>
+          </div>
+          <div id="entery"><label>Last Name:</label><br>
+               <input type="text" id="last_name" placeholder="last name" required>
           <div id="entery"><label>Email:</label><br>
-           <input type="email" name="email" placeholder="user@storemng.com">
+           <input type="email" id="user_email" placeholder="user@storemng.com" required>
           </div>
           <div  id="entery">
             <label>Password:</label><br>
-           <input type="password" name="password" placeholder="Enter password">
+           <input type="password" id="user_password" placeholder="Enter password" required> 
           </div>
           <div  id="entery">
             <label>Confirm password:</label><br>
-           <input type="password" name="password" placeholder="Confirm password">
-          </div>
-          <select id="category" name="category">
-                <option value="#">Choose role..</option>
-                <option value="Textbooks">attendant</option>
-                <option value="Storybooks">Admin</option>
-          </select>
-          <div>
+           <input type="password" id="confirm_password" placeholder="Confirm password" required>
+          </div          <div>
             <p><a href="index.html">Already have an Account! Please Login</a></p>
           </div>
           <div  id="entery">
-            <button type="button" id="button_reg" onclick="homepage()">Sign up</button>
+            <button type="button" onclick="addnewuser()" class="button_reg">Sign up</button>
           </div>
         </form>
       </div>
       </div>
     </div>
-
   <footer>
       <p>Store Manager Copyright &copy; 2018</p>
     </footer>

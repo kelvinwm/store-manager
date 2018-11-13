@@ -3,7 +3,11 @@
   <head>
     <title>Store Manager</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/index.js"></script>
   </head>
+  <script>
+    documentonload();
+  </script>
   <body>
     <header>
       <div class="container">
@@ -64,7 +68,7 @@
             <li><b><a href="manage.html">Home</a></b></li><hr>
             <li><b><a href="addproduct.html">Add Product</a></b></li><hr>
             <li><b><a href="register.html">Add new User</a></b></li><hr>
-            <li><b><a href="index.html">Log out</a></b></li><hr>
+            <li onclick="logout()"><b><a href="">Log out</a></b></li><hr>
           </ul>
         </div>
 

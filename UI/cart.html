@@ -1,29 +1,28 @@
-
 <!DOCTYPE html>
 <html>
   <head>
     <title>Store Manager</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/index.js"></script>
   </head>
-  <body>
+  <script>
+    documentonload();
+  </script>
+  <body onload="mycartitems()">
     <header>
       <div class="container">
         <div id="trademark">
           <h1>Store Manager</h1>
         </div>
         <nav>
-         
           <ul>
             <li> <form>
-            <input type="text" name="search" id="searchpd" placeholder="Search sales">
-            <button type="button" class="btn">Search</button>
+            <input type="search" name="search" id="searchpd" placeholder="Search cart">
             </form></li>
             <li class="current"><a href="home.html">Home</a></li>
-            <li><a href="index.html">Sign out</a></li>
-            <li><a href="cart.html"><img src="img/troller.png" alt="buyers cart"></a></li>
-            <li><img src="img/ac.jpg" alt="Account"></li>
+            <li><button id="logout" style="color: white" onclick="logout()">Sign out</button></li>
+            <li style="text-align: center;"><img src="img/ac.jpg" alt="myaccount"> <br><i id="myemail">myaccount@here.com</i></li>
           </ul>
-          
         </nav>
       </div> 
     </header>
@@ -35,77 +34,26 @@
           </section>
           <section id="viewallproducts">
             <div class="container">
-              <div id="main-col">
-          <h1>Cart Items</br></h1>
+              <div class="viewdesign">
+              <h1>Cart Items</br></h1>
                 <div id="overflow">
                   <div id ="list_div">
-                    <table>
+                    <table id="carttable">
                          <tr><th></th>
                           <th>Product Name</th>
                           <th>Quantity</th>
                           <th>Cost per Unit</th>
                           <th>Total Cost</th>
-                          <th>Date</th>
                           <th>Delete</th>
                          </tr>
-                         <tr>
-                          <td>1</td>
-                          <td>Jesma English</td>
-                          <td>1</td>
-                          <td>700</td>
-                          <td>700</td>
-                          <td>10/8/2018</td>
-                          <td><a href=""><img src="img/delete.png" alt="delete cart"></a></td>
-                         </tr>
-                          <tr>
-                          <td>2</td>
-                          <td>Born A crime</td>
-                          <td>2</td>
-                          <td>1500</td>
-                          <td>3000</td>
-                          <td>10/8/2018</td>
-                          <td><a href=""><img src="img/delete.png" alt="delete cart"></a></td>
-                         </tr>
-                          <tr>
-                          <td>3</td>
-                          <td>Javascript for Dummies</td>
-                          <td>1</td>
-                          <td>2000</td>
-                          <td>2000</td>
-                          <td>10/8/2018</td>
-                          <td><a href=""><img src="img/delete.png" alt="delete cart"></a></td>
-                         </tr>
-                          <tr>
-                          <td>4</td>
-                          <td>Happy marriage</td>
-                          <td>2</td>
-                          <td>500</td>
-                          <td>1000</td>
-                          <td>10/8/2018</td>
-                          <td><a href=""><img src="img/delete.png" alt="delete cart"></a></td>
-                         </tr>
-                         <tr>
-                          <td>5</td>
-                          <td>My Life in Prison</td>
-                          <td>1</td>
-                          <td>1000</td>
-                          <td>1000</td>
-                          <td>10/8/2018</td>
-                          <td><a href=""><img src="img/delete.png" alt="delete cart"></a></td>
-                         </tr>
+                        
                       </table>
                   </div>
-            <div style="margin: 0 auto; width: 50%;">
-            <button type="button" id="productdbtn">Submit</button>
-             <button type="button" id="productdbtn">Cancel</button>
-           </div>
+                    <div style="text-align: center;">
+                      <button type="button" onclick="cancelcart()" id="productdbtn">Cancel</button>
+                      <button type="button" onclick="createasales()" id="productdbtn">Submit</button>
+                   </div>
                 </div>
-              </div>
-              <div id="categories">
-                <ul>
-                  <li><b><a href="home.html">View All Products</a></b></li><hr>
-            <li><b><a href="mysales.html">My Sale Records</a></b></li><hr>
-                </ul>
               </div>
             </div>
           </section>

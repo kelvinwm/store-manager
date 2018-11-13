@@ -44,7 +44,7 @@ header nav{
 	font-weight: bold;
 }
 nav img{
-	width: 20px;
+	width: 30px;
 }
 .current a{
 	color: #ffffff;
@@ -71,7 +71,7 @@ a:hover{
 	width: 80%;
 	border-radius: 5px;
 }
-#entery input[type="email"]{
+#entery input[type="email"], input[type="text"], input[type="number"]{
 	height: 42px;
 	width: 80%;
 	border-radius: 5px;
@@ -81,7 +81,7 @@ a:hover{
 	text-align: center;
 	background: #E8E8EC;
 	width: 30%;
-	min-height: 474px;
+	min-height: 485px;
 	margin: 0 auto;
 	border-radius: 5px;
 	color: #C70039;
@@ -94,7 +94,7 @@ a:hover{
 	padding: 15px;
 
 }
-#button_reg{
+.button_reg{
 	height: 38px;
 	padding-left: 30px;
 	padding-right: 30px;
@@ -113,7 +113,12 @@ a:hover{
 	width:70%;
     margin: auto;
 }
-/*View all products body*/
+/*view items body*/
+.viewdesign{
+	width: 90%;
+	margin: 0 auto;
+}
+/*landing page body*/
 #main-col{
 	float: right;
 	width: 77%;
@@ -193,7 +198,7 @@ tr:nth-child(even) {
 	text-align: center;
 }
 .main-col img{
-	width:100%;
+	width:30%;
 }
 #productdetails{
 	margin-left: 50%
@@ -213,18 +218,16 @@ tr:nth-child(even) {
 	font-weight: bold;
 }
 #newproductdiv{
-	
 	text-align: center;
 	background: #E8E8EC;
 	width: 60%;
-	padding-top: 20px;
+	padding-top: 30px;
 	min-height: 474px;
 	margin-left: 70px;
 	border-radius: 5px;
 	color: #C70039;
-
 }
-#pname, #copies, #category, textarea {
+#pname, #copies, #product_category, textarea {
 	 height: 42px;
 	 margin-top: 6px;
 	 width: 80%;
@@ -331,6 +334,52 @@ figcaption{margin-left:15px;}
 }
 #list_div img{
 	width: 30px;
+}
+#form-popup {
+    display: none; 
+    position: fixed; 
+    width: 100%; 
+    left: 0;
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+    z-index: 1; /* Sit on top */
+    top: 0;
+}
+#form-cart{
+    display: none; 
+    position: fixed; 
+    width: 100%; 
+    left: 0;
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+    z-index: 1; /* Sit on top */
+    top: 0;
+}
+/* The Close form */
+.close {
+    color: #aaaaaa;
+    float: right;
+    margin-right:10px;
+    font-size: 48px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: #C70039;
+    text-decoration: none;
+    cursor: pointer;
+}
+#logout{
+	font-weight: bold;
+	background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    font-size: 16px;
 }
 /*
 #login-background {

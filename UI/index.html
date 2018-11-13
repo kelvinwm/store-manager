@@ -18,7 +18,6 @@
         </nav>
       </div> 
     </header>
-
   <div class="container">
     <div id="login-background">
       <div class="regform">
@@ -29,28 +28,22 @@
 
           <div id="entery"> 
             <label>Email:</label><br>
-            <input type="email" name="email" placeholder="user@storemng.com">
+            <input type="email" id="req_email" placeholder="user@storemng.com">
           </div>
           <div id="entery">
             <label>Password:</label>
-            <input type="password" name="password" placeholder="Enter password">
+            <input type="password" id="req_password" placeholder="Enter password">
           </div>
-           <select id="category" name="category">
-                <option value="choose">Choose role..</option>
-                <option value="Attendant">Attendant</option>
-                <option value="Admin">Admin</option>
-            </select>
           <div>
             <p><a href="">Forgot Password?</a> | <a href="register.html">Create Account!</a></p>
           </div>
           <div  id="entery">
-            <button type="button" id="button_reg" onclick="homepage()">Sign in</button>
+            <button type="button" class="button_reg" onclick="login()">Sign in</button>
           </div>
         </form>
       </div>
       </div>
     </div>
-
   <footer>
       <p>Store Manager Copyright &copy; 2018</p>
     </footer>
