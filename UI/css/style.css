@@ -79,6 +79,7 @@ a:hover{
 #searchpd{
 	height: 35px;
 	border-radius: 5px;
+	padding-left: 30px;
 }
 /*index sign in form css*/
 .regform{
@@ -246,9 +247,6 @@ input[type=submit] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-}
-#searchpd{
-	border-radius: 5px;
 }
 #dashboard{
 	float: right;

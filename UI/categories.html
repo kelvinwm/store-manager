@@ -18,7 +18,7 @@
         	<ul>
         		<li>
         		<form>
-	            <input type="search" id="searchpd" name="search" placeholder="Search.....">
+	            <input type="search" id="searchpd"onkeyup="searchitem('categories_table')" placeholder="Search.....">
 	            </form></li>
 	            <li><b><a href="manage.html">Home</a></b></li>
 	            <li><button id="logout" style="color: white" onclick="logout()">Sign out</button></li>
@@ -41,12 +41,12 @@
 			<h1>Categories</br></h1>
 	          <div id="overflow">
 	          	<table border="1" id="categories_table">
-	          	    <tr>
-					 	<th></th>
-						<th>Category Name</th>
-						<th>Date</th>
-						<th>Modify</th>
-					 </tr>
+                <tr>
+                  <th></th>
+      						<th>Category Name</th>
+      						<th>Date</th>
+      						<th>Modify</th>
+      					 </tr>
 		         </table>
 	          </div>
         </div>
