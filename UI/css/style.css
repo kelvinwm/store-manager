@@ -44,7 +44,7 @@ header nav{
 	font-weight: bold;
 }
 nav img{
-	width: 20px;
+	width: 30px;
 }
 .current a{
 	color: #ffffff;
@@ -198,7 +198,7 @@ tr:nth-child(even) {
 	text-align: center;
 }
 .main-col img{
-	width:100%;
+	width:30%;
 }
 #productdetails{
 	margin-left: 50%
