@@ -5,6 +5,23 @@ function documentonload(){
 		let url= "index.html"; 
     	window.location = url;
 	}
+	let myemail = localStorage.getItem('myemail');
+	document.getElementById('myemail').innerHTML = myemail;
+	
+}
+function checkitemsincart(){
+	let cart_item ;
+	let mytct = localStorage.getItem('mycart');
+	if(mytct===null){
+		cart_item =[];
+	}else{
+		cart_item = JSON.parse(mytct);
+	}
+	let x = cart_item.length;
+	if(x>0){
+		document.getElementById('itemincart').innerHTML = x;
+	}
+	
 }
 /*check failure to reach server and expired token*/
 function checkconnection(response){
@@ -39,7 +56,7 @@ function adminload(){
 function login(){
 	let nemail=document.getElementById("req_email").value;
 	let password=document.getElementById("req_password").value;
-	let url = 'http://127.0.0.1:5000/api/v2/auth/login';
+	let url = 'https://store-manager-api-db.herokuapp.com/api/v2/auth/login';
 	let data = {
 				email: nemail,
 				password: password};
@@ -73,7 +90,7 @@ let mytoken = localStorage.getItem('mytoken');
 function users(){
 	documentonload();
 	adminload();
-	fetch(`http://127.0.0.1:5000/api/v2/users`,{
+	fetch(`https://store-manager-api-db.herokuapp.com/api/v2/users`,{
 		headers:{
 	    'Content-Type': 'application/json',
 	    'access-token': mytoken
@@ -127,7 +144,7 @@ function edituser(){
 	let lname=document.getElementById("last-name").value;
 	let nemail=document.getElementById("new-email").value;
 	let nrole=document.getElementById("new-category").value;
-	let url = 'http://127.0.0.1:5000/api/v2/users/'.concat(id_no) ;
+	let url = 'https://store-manager-api-db.herokuapp.com/api/v2/users/'.concat(id_no) ;
 	let data = {first_name: fname,
 				last_name: lname,
 				email: nemail,
@@ -171,7 +188,7 @@ function addnewuser(){
 		return  alert("Password mismatch!");
 	}
 	else{
-	let url = 'http://127.0.0.1:5000/api/v2/auth/signup';
+	let url = 'https://store-manager-api-db.herokuapp.com/api/v2/auth/signup';
 	let data = {first_name: fname,
 				last_name: lname,
 				email: nemail,
@@ -204,7 +221,7 @@ function addnewuser(){
 /*user can log out*/
 function logout(){
 	documentonload();
-	let url = 'http://127.0.0.1:5000/api/v2/auth/logout';
+	let url = 'https://store-manager-api-db.herokuapp.com/api/v2/auth/logout';
 	fetch(url, {
 	  method: 'GET',
 	  headers:{
@@ -225,7 +242,7 @@ function logout(){
 function categories(){
 	documentonload();
 	adminload();
-	fetch(`http://127.0.0.1:5000/api/v2/category`,{
+	fetch(`https://store-manager-api-db.herokuapp.com/api/v2/category`,{
 		headers:{
 	    'Content-Type': 'application/json',
 	    'access-token': mytoken
@@ -261,7 +278,7 @@ function categories(){
 	documentonload();
 	adminload();
 	let newcategory=document.getElementById("newcategory_name").value;
-	let url = 'http://127.0.0.1:5000/api/v2/category';
+	let url = 'https://store-manager-api-db.herokuapp.com/api/v2/category';
 	let data = {category: newcategory};
 	fetch(url, {
 	  method: 'POST',
@@ -292,7 +309,7 @@ function editcategory(){
 	adminload();
 	let id_no=document.getElementById("id_no").value;
 	let category=document.getElementById("category_name").value;
-	let url = 'http://127.0.0.1:5000/api/v2/category/'.concat(id_no) ;
+	let url = 'https://store-manager-api-db.herokuapp.com/api/v2/category/'.concat(id_no) ;
 	let data = {category: category};
 	fetch(url, {
 	  method: 'PUT',
@@ -326,7 +343,7 @@ function addproduct(){
 	let quantity=document.getElementById("quantity").value;
 	let price=document.getElementById("price").value;
 	let product_category=document.getElementById("product_category").value;
-	let url = 'http://127.0.0.1:5000/api/v2/products';
+	let url = 'https://store-manager-api-db.herokuapp.com/api/v2/products';
 	let data = {product_name: product_name,
 				quantity: quantity,
 				price: price,
@@ -357,7 +374,8 @@ function addproduct(){
 /* get all products*/
 function products(){
 	documentonload();
-	fetch(`http://127.0.0.1:5000/api/v2/products`,
+	checkitemsincart();
+	fetch(`https://store-manager-api-db.herokuapp.com/api/v2/products`,
 		{headers:{
 	    'Content-Type': 'application/json',
 	    'access-token': mytoken
@@ -415,7 +433,7 @@ function products(){
     let quantity = document.getElementById("quantity").value;
 	let price = document.getElementById("price").value;
 	let category = document.getElementById("product_category").value;
-	let url = 'http://127.0.0.1:5000/api/v2/products/'.concat(id_no) ;
+	let url = 'https://store-manager-api-db.herokuapp.com/api/v2/products/'.concat(id_no) ;
 	let data = {quantity: quantity,
 				price: price,
 				category: category};
@@ -509,7 +527,7 @@ function addtocart(){
 	cart_item.push(item);
 	localStorage.setItem('mycart', JSON.stringify(cart_item));
 	let x = cart_item.length;
-	alert(x);
+	document.getElementById('itemincart').innerHTML = x;
 	closecart();
 }
 /* view items in the cart*/
@@ -538,15 +556,32 @@ function mycartitems(){
 	    cell5.innerHTML = product.unit_cost*product.prod_quantity;
 	    cell6.innerHTML = `<img style="cursor: pointer;" src="img/delete.png" alt="delete cart">`;
 	    cell6.onclick = function (event){
-	    	itemlist.splice(product.item_id-1, 1);
-	    	document.getElementById("carttable").deleteRow(product.item_id);
-	    	total_cost = 0;
-	    	itemlist.forEach(function(product) { 
-	    	total_cost+=product.unit_cost*product.prod_quantity;
-	    	});
-	    	document.getElementById("carttable").deleteRow(-1);
-	    	totalcrtprice(total_cost);
-	    }
+			// let del = confirm("Delete cart product!");
+		    // if (del == false) {
+		    //     return;
+		    // }
+	    	// 
+	    	// 
+	    	
+	    	let carttable= document.getElementById("carttable");
+	    	var rowLength = document.getElementById("carttable").rows.length;
+	    	
+	    	for (i = 0; i < rowLength-1; i++){
+		      	//gets cells of current row  
+		       	let salecell = carttable.rows.item(i).cells;
+		       	let product_name = salecell.item(0).innerHTML;
+		       	if(product_name==product.item_id){
+		       		    itemlist.splice(i-1, 1);
+		       		    let cost = 0;
+		       		    document.getElementById("carttable").deleteRow(i);
+			    		itemlist.forEach(function(product) { 
+			    		cost+=product.unit_cost*product.prod_quantity;
+			    	});
+			    		document.getElementById("carttable").deleteRow(-1);
+			    		totalcrtprice(cost);
+			    }
+		    }
+		}
 	    total_cost+=product.unit_cost*product.prod_quantity;
 	});
 	totalcrtprice(total_cost);	
@@ -582,7 +617,7 @@ function createasales(){
     	let url= "home.html"; 
     	return window.location = url;
     }  
-    for (i = 1; i < rowLength; i++){
+    for (i = 1; i < rowLength-1; i++){
       	//gets cells of current row  
        	let salecell = saletable.rows.item(i).cells;
        	let product_name = salecell.item(1).innerHTML;
@@ -590,7 +625,7 @@ function createasales(){
        	list = {product_name:product_name,quantity:quantity};
        	product_list.push(list);
     }
-       let url = 'http://127.0.0.1:5000/api/v2/sales';
+       let url = 'https://store-manager-api-db.herokuapp.com/api/v2/sales';
 	   let data =  {"products":product_list};
 	   fetch(url, {
 		  method: 'POST',
@@ -603,6 +638,7 @@ function createasales(){
 		.then(res => res.json())
 		.then(response => {
 			console.log(response);
+			checkconnection(response);
 			if (response["message"]!="Sales created successfully"){
 				return alert(response["message"]);
 			}else{
@@ -617,7 +653,7 @@ function createasales(){
 /*view all sales*/
 function viewsales(){
 	documentonload();
-	fetch(`http://127.0.0.1:5000/api/v2/sales`,{
+	fetch(`https://store-manager-api-db.herokuapp.com/api/v2/sales`,{
 		headers:{
 	    'Content-Type': 'application/json',
 	    'access-token': mytoken
@@ -663,7 +699,7 @@ function viewsales(){
  function deletesale(id_no){
  	documentonload();
  	adminload();
-	let url = 'http://127.0.0.1:5000/api/v2/sales/'.concat(id_no) ;
+	let url = 'https://store-manager-api-db.herokuapp.com/api/v2/sales/'.concat(id_no) ;
 	let del = confirm("Delete Sale record!");
     if (del == false) {
         return;
