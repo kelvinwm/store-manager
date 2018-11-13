@@ -76,6 +76,10 @@ a:hover{
 	width: 80%;
 	border-radius: 5px;
 }
+#searchpd{
+	height: 35px;
+	border-radius: 5px;
+}
 /*index sign in form css*/
 .regform{
 	text-align: center;
