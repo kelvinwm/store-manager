@@ -18,4 +18,4 @@ records. This application is meant for use in a single store</code>
 stock.
 2. The store owner can be referred to as the admin of the application.
 
-<code>https://kelvinwm.github.io/store-manager/UI/ </code>  <code>LogIn Credentials:</code> Choose a role (Admin or Attendant)
+<code>https://kelvinwm.github.io/store-manager/UI/ </code>  <code>LogIn Credentials:</code> email:peterkelvin@storemanager.com password:25s#sssA4
