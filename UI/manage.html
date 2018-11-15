@@ -4,11 +4,9 @@
     <title>Store Manager</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/index.js"></script>
+    <script src="js/manage.js"></script>
   </head>
-  <script>
-    adminload();
-  </script>
-  <body onload="documentonload()">
+  <body onload="dashboardlayout()">
     <header>
       <div class="container">
         <div id="trademark">
@@ -39,19 +37,19 @@
               <td>
                 <div id="dashboard">
                   <p><b>Active users</b></p>
-                  <p>13</p>
+                  <p id="activeusers"></p>
                 </div>
               </td>
                <td>
                 <div id="dashboard">
-                  <p><b>Today's Sales</b></p>
-                  <p>100</p>
+                  <p><b>Total Sales</b></p>
+                  <p id="totalsales"></p>
                 </div>
               </td>
                <td>
                 <div id="dashboard">
-                  <p><b>Current categories</b></p>
-                  <p>15</p>
+                  <p><b>Total number products</b></p>
+                  <p id="totalnumberofproducts"></p>
                 </div>
               </td>
             </tr>
@@ -77,64 +75,19 @@
             </div>
           </div>
           <div id="dashboard_table">
-            <div id="recent_sales"></div>
-            <p><h3>Recent Sales</h3></p><hr>
-                  <table>
+            <div id="recent_sales" style="height:27em;">
+            <p><h3>Recent Sales <a href="sales.html"><i style="float:right;">view all sales</i></a> </h3></p><hr>
+                  <table id="salestable">
                      <tr><th></th>
                       <th>Attendant Name</th>
                       <th>Product Name</th>
                       <th>Quantity</th>
-                      <th>Cost per Unit</th>
                       <th>Total Cost</th>
                       <th>Date</th>
-                     </tr>
-                     <tr>
-                      <td>1</td>
-                      <td>James Atieno</td>
-                      <td>Jesma English</td>
-                      <td>1</td>
-                      <td>700</td>
-                      <td>700</td>
-                      <td>10/8/2018</td>
-                     </tr>
-                      <tr>
-                      <td>2</td>
-                      <td>John Musau</td>
-                      <td>Born A crime</td>
-                      <td>2</td>
-                      <td>1500</td>
-                      <td>3000</td>
-                      <td>10/8/2018</td>
-                     </tr>
-                      <tr>
-                      <td>3</td>
-                      <td>Vicent Mwanza</td>
-                      <td>Javascript for Dummies</td>
-                      <td>1</td>
-                      <td>2000</td>
-                      <td>2000</td>
-                      <td>10/8/2018</td>
-                     </tr>
-                      <tr>
-                      <td>4</td>
-                      <td>Janet Chesang</td>
-                      <td>Happy marriage</td>
-                      <td>2</td>
-                      <td>500</td>
-                      <td>1000</td>
-                      <td>10/8/2018</td>
-                     </tr>
-                     <tr>
-                      <td>5</td>
-                      <td>James Atieno</td>
-                      <td>My Life in Prison</td>
-                      <td>1</td>
-                      <td>1000</td>
-                      <td>1000</td>
-                      <td>10/8/2018</td>
+                      <th>Delete</th>
                      </tr>
                   </table>
-                  <p><a href="sales.html"><b>View all sales</b></a> </p>
+              </div>
           </div>
         </div>
         <div id="categories">

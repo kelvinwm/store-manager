@@ -99,7 +99,7 @@ function users(){
 	  .then((res)=> res.json())
 	  .then((data) => {
 	  	checkconnection(data);
-	  	console.log(data);
+	  	localStorage.setItem('numberofusers',data["All products"].length);
 	  	data["All products"].forEach(function(user){
 	  		let table = document.getElementById("userstable");
 		    let row = table.insertRow();
@@ -383,7 +383,7 @@ function products(){
 	  .then((res)=> res.json())
 	  .then((data) => {
 	  	checkconnection(data);
-	  	console.log(data);
+	  	localStorage.setItem('numberofproducts',data["All products"].length);
 	  	data["All products"].forEach(function(user){
 	  		let table = document.getElementById("userstable");
 		    let row = table.insertRow();
@@ -665,8 +665,8 @@ function viewsales(){
 	  	if (data["message"]=="Nothing has been stored yet"){
 	  		return alert("Nothing has been stored yet");
 	  	}
-	  	console.log(data);
-	  	data["All sales"].forEach(function(sale){
+	  	localStorage.setItem('numberofsales',data["All sales"].length);
+	  	data["All sales"].reverse().forEach(function(sale){
 	  		let table = document.getElementById("salestable");
 		    let row = table.insertRow();
 		    let cell1 = row.insertCell(0);
