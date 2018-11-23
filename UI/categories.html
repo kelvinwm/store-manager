@@ -4,6 +4,8 @@
     <title>Store Manager</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/index.js"></script>
+    <script src="js/category.js"></script>
+    <script src="js/products.js"></script>
   </head>
   <script>
     documentonload();
@@ -64,7 +66,7 @@
                    <input type="text" id="category_name" required>
                 </div>
                 <div id="entery" style="padding-top: 25px;">
-                    <button type="button" onclick="deleteproduct('http://127.0.0.1:5000/api/v2/category/', 'categories.html')" class="button_reg">Delete</button>
+                    <button type="button" onclick="deleteproduct('https://store-manager-api-db.herokuapp.com/api/v2/category/', 'categories.html')" class="button_reg">Delete</button>
                     <button type="button" onclick="editcategory()" class="button_reg">Update</button>
                 </div>
             </form>
