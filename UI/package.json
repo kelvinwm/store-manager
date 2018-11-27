@@ -4,7 +4,7 @@
   "description": "Store manager app",
   "main": "test.js",
   "scripts": {
-    "test": "mocha"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/kelvinwm/store-manager/issues"
   },
-  "homepage": "https://github.com/kelvinwm/store-manager#readme"
+  "homepage": "https://github.com/kelvinwm/store-manager#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
 }

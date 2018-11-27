@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Store Manager</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/index.js"></script>
+    <script src="../js/manage.js"></script>
+    <script src="../js/sales.js"></script>
+  </head>
+  <body onload="dashboardLayout()">
+    <header>
+      <div class="container">
+        <div id="trademark">
+          <h1>Store Manager</h1>
+        </div>
+        <nav>
+          <ul>
+            <li> <form>
+            <input type="search" id="searchpd" onkeyup="searchItem('tobeworkedon')" placeholder="Search.....">
+            </form></li>
+            <li style="text-align: center;"><img src="../img/ac.png" alt="myaccount"> <br><i id="myemail">myaccount@here.com</i></li>
+          </ul>
+        </nav>
+      </div> 
+    </header>
+    <section id="systemimage">
+      <div class="container">
+        <h1>Store Manager </br></h1>
+        <p>Best system to manage and track your sales</p>
+        
+      </div>
+    </section>
+    <section id="viewallproducts">
+      <div class="container">
+        <div id="main-col">
+          <table id="dashboard_table">
+            <tr>
+              <td>
+                <div id="dashboard">
+                  <p><b>Active users</b></p>
+                  <p id="activeusers"></p>
+                </div>
+              </td>
+               <td>
+                <div id="dashboard">
+                  <p><b>Total Sales</b></p>
+                  <p id="totalsales"></p>
+                </div>
+              </td>
+               <td>
+                <div id="dashboard">
+                  <p><b>Total number products</b></p>
+                  <p id="totalnumberofproducts"></p>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <div id="dashboard_table">
+            <div id="statistics"></div>
+            <p><h3>Sales Statistics</h3></p><hr>
+            <i>Sales as of end of last week<i style="float: right;">Sales per day</i></i>
+            <div id="space">
+            <div id="day">Monday:</div><div id="rating"><div id="rating1"></div></div><div id="amount">150</div>
+            </div>
+            <div id="space">
+            <div id="day">Tuesday:</div><div id="rating"><div id="rating2"></div></div><div id="amount">63</div>
+            </div>
+            <div id="space">
+            <div id="day">Wednesday:</div><div id="rating"><div id="rating3"></div></div><div id="amount">200</div>
+            </div>
+            <div id="space">
+            <div id="day">Thursday:</div><div id="rating"><div id="rating4"></div></div><div id="amount">50</div>
+            </div>
+            <div id="space">
+            <div id="day">Friday:</div><div id="rating"><div id="rating5"></div></div><div id="amount">100</div>
+            </div>
+          </div>
+          <div id="dashboard_table">
+            <div id="recent_sales" style="height:27em;">
+            <p><h3>Recent Sales <a href="sales.html"><i style="float:right;">view all sales</i></a> </h3></p><hr>
+                  <table id="salestable">
+                     <tr><th></th>
+                      <th>Attendant Name</th>
+                      <th>Product Name</th>
+                      <th>Quantity</th>
+                      <th>Total Cost</th>
+                      <th>Date</th>
+                      <th>Delete</th>
+                     </tr>
+                  </table>
+              </div>
+          </div>
+        </div>
+        <div id="categories">
+          <h4>Dashboard</h4>
+          <ul>
+            <li><b><a href="home.html">View all products</a></b></li><hr>
+            <li><b><a href="addproduct.html">Add Product</a></b></li><hr>
+            <li><b><a href="register.html">Add new User</a></b></li><hr>
+            <li><b><a href="categories.html">Categories</a></b></li><hr>
+            <li><b><a href="#recent_sales">View Sales</a></b></li><hr>
+            <li><b><a href="#statistics">Sales Statistics</a></b></li><hr>
+            <li><b><a href="users.html">Registered Users</a></b></li><hr>
+            <li><b><a href="index.html">Log out</a></b></li><hr>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <p>Store Manager Copyright &copy; 2018</p>
+    </footer>
+  </body>
+</html>

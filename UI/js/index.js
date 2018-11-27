@@ -1,15 +1,15 @@
 /*check if user is logged in*/
-function documentonload(){
+function documentOnLoad(){
 	let mytoken = localStorage.getItem('mytoken')
 	if (mytoken===null){
-		let url= "index.html"; 
+		let url= "../index.html";
     	window.location = url;
 	}
 	let myemail = localStorage.getItem('myemail');
 	document.getElementById('myemail').innerHTML = myemail;
 	
 }
-function checkitemsincart(){
+function checkItemsInCart(){
 	let cart_item ;
 	let mytct = localStorage.getItem('mycart');
 	if(mytct===null){
@@ -24,19 +24,19 @@ function checkitemsincart(){
 	
 }
 /*check failure to reach server and expired token*/
-function checkconnection(response){
+function checkConnection(response){
 	if(response["message"]=="Internal Server Error"){
 		alert("Error loading data, check internet connection");
 	}else 
 	if(response["message"]=="Your time has expired, please login"){
 		localStorage.removeItem('mytoken');
-		let url= "index.html"; 
+		let url= "../index.html";
     	window.location = url;
     	alert(response["message"]);
 	}
 }
 /*access dashboard from home page*/
-function accessdashboard(){
+function accessDashboard(){
 	let myrole = localStorage.getItem('myrole')
 	if (myrole=="true"){
 		let url= "manage.html"; 
@@ -45,7 +45,7 @@ function accessdashboard(){
 	alert("You cannot access dashboard. Contact admin");
 }
 /*check for admin role*/
-function adminload(){
+function adminLoad(){
 	let myrole = localStorage.getItem('myrole')
 	if (myrole!="true"){
 		let url= "home.html"; 
@@ -73,10 +73,10 @@ function login(){
 			localStorage.setItem('myemail', nemail);
 			localStorage.setItem('myrole', response["role"]);
 			if(response["role"]=='true'){
-				let url= "manage.html"; 
+				let url= "public/manage.html";
     			window.location = url;
 			}else{
-				let url= "home.html"; 
+				let url= "public/home.html";
     			window.location = url;
 			}
 		}else{
@@ -88,8 +88,8 @@ function login(){
 let mytoken = localStorage.getItem('mytoken');
 /* view all user*/
 function users(){
-	documentonload();
-	adminload();
+	documentOnLoad();
+	adminLoad();
 	fetch(`https://store-manager-api-db.herokuapp.com/api/v2/users`,{
 		headers:{
 	    'Content-Type': 'application/json',
@@ -98,7 +98,7 @@ function users(){
 	})
 	  .then((res)=> res.json())
 	  .then((data) => {
-	  	checkconnection(data);
+	  	checkConnection(data);
 	  	localStorage.setItem('numberofusers',data["All products"].length);
 	  	data["All products"].forEach(function(user){
 	  		let table = document.getElementById("userstable");
@@ -118,8 +118,8 @@ function users(){
 		    cell6.innerHTML = user.date_created;
 		    cell7.innerHTML = `<img style="cursor: pointer;" src="img/edit.png" alt="edit cart">`;
 		    cell7.onclick = function (event){
-		    	adminload();
-		    	loadpopup();
+		    	adminLoad();
+		    	loadPopUp();
 		    	document.getElementById("id_no").value = user.Id;
 		    	document.getElementById("first_name").value = user.first_name;
 		    	document.getElementById("last-name").value = user.last_name;
@@ -131,14 +131,14 @@ function users(){
 	  .catch((err)=> console.log(err))
  }
  /* form popup to edit user and product info*/
-function loadpopup(){
-	let updateform = document.getElementById("form-popup");
-	updateform.style.display = "block";
+function loadPopUp(){
+	let updateForm = document.getElementById("form-popup");
+	updateForm.style.display = "block";
 	}
 /*update user data*/
-function edituser(){
-	documentonload();
-	adminload();
+function editUser(){
+	documentOnLoad();
+	adminLoad();
 	let id_no=document.getElementById("id_no").value;
 	let fname=document.getElementById("first_name").value;
 	let lname=document.getElementById("last-name").value;
@@ -159,26 +159,26 @@ function edituser(){
 	}).then(res => res.json())
 	.then(response => {
 		console.log(response);
-		checkconnection(response);
+		checkConnection(response);
 		if (response["message"]!="Updated successfully"){
 			return alert(response["message"] || response["Alert"]);
 		}else{
 			alert(response["message"]);
-			let url= "users.html";
+			let url= "templates/users.html";
 			window.location = url;
-			return closeform();
+			return closeForm();
 		}
 	})
 	.catch(error => console.error('Error:', error));
 }
-function closeform(){
-	let updateform = document.getElementById("form-popup");
-	updateform.style.display = "none";
+function closeForm(){
+	let updateForm = document.getElementById("form-popup");
+	updateForm.style.display = "none";
 }
 /* singup new user*/
-function addnewuser(){
-	documentonload();
-	adminload();
+function addNewUser(){
+	documentOnLoad();
+	adminLoad();
 	let fname=document.getElementById("first-name").value;
 	let lname=document.getElementById("last_name").value;
 	let nemail=document.getElementById("user_email").value;
@@ -202,7 +202,7 @@ function addnewuser(){
 	  }
 	}).then(res => res.json())
 	.then(response => {
-		checkconnection(response);
+		checkConnection(response);
 		console.log(response);
 		if (response["message"]!="User successfully registered"){
 			return alert(response["message"]|| response["Error"]);
@@ -220,7 +220,7 @@ function addnewuser(){
 }
 /*user can log out*/
 function logout(){
-	documentonload();
+	documentOnLoad();
 	let url = 'https://store-manager-api-db.herokuapp.com/api/v2/auth/logout';
 	fetch(url, {
 	  method: 'GET',
@@ -230,27 +230,27 @@ function logout(){
 	  }
 	}).then(res => res.json())
 	.then(response => {
-		checkconnection(response);
+		checkConnection(response);
 		console.log(response);
 		localStorage.clear();
-		let url= "index.html"; 
+		let url= "../index.html";
 		window.location = url;
 	})
 	.catch(error => console.error('Error:', error));
 }
 /*Add to cart*/
-function popformcart(){
-	let updateform = document.getElementById("form-cart");
-	updateform.style.display = "block";
+function popFormCart(){
+	let updateForm = document.getElementById("form-cart");
+	updateForm.style.display = "block";
 	}
-/*close popformcart*/
-function closecart(){
-	let updateform = document.getElementById("form-cart");
-	updateform.style.display = "none";
+/*close popFormCart*/
+function closeCart(){
+	let updateForm = document.getElementById("form-cart");
+	updateForm.style.display = "none";
 }
 /* view items in the cart*/
-function mycartitems(){
-	documentonload();
+function myCartItems(){
+	documentOnLoad();
 	let mytct = localStorage.getItem('mycart');
 	let itemlist = JSON.parse(mytct);
 	let total_cost = 0;
@@ -293,16 +293,16 @@ function mycartitems(){
 			    		cost+=product.unit_cost*product.prod_quantity;
 			    	});
 			    		document.getElementById("carttable").deleteRow(-1);
-			    		totalcrtprice(cost);
+			    		totalCrtPrice(cost);
 			    }
 		    }
 		}
 	    total_cost+=product.unit_cost*product.prod_quantity;
 	});
-	totalcrtprice(total_cost);	
+	totalCrtPrice(total_cost);	
 }
 /* this function gives total cost of items in cart*/
-function totalcrtprice(total_cost){
+function totalCrtPrice(total_cost){
 	let table = document.getElementById("carttable");
 	let row = table.insertRow();
     let cell1 = row.insertCell(0);
@@ -315,13 +315,13 @@ function totalcrtprice(total_cost){
     cell5.innerHTML =total_cost;
 }
 /*cancel item from cart*/
-function cancelcart(){
+function cancelCart(){
 	localStorage.removeItem('mycart');
 	let url= "home.html"; 
     return window.location = url;
 }
 /*search functionality*/
-function searchitem(tablename) {
+function searchItem(tablename) {
   var input, filter, table, tr, td, i;
   input = document.getElementById("searchpd");
   filter = input.value.toUpperCase();

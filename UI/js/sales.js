@@ -1,7 +1,7 @@
 /*Create a sale*/
-function createasales(){
+function createSales(){
    //gets table
-   	documentonload();
+   	documentOnLoad();
 	let product_list = [];
     let saletable = document.getElementById('carttable');
     let rowLength = saletable.rows.length;
@@ -31,7 +31,7 @@ function createasales(){
 		.then(res => res.json())
 		.then(response => {
 			console.log(response);
-			checkconnection(response);
+			checkConnection(response);
 			if (response["message"]!="Sales created successfully"){
 				return alert(response["message"]);
 			}else{
@@ -44,8 +44,8 @@ function createasales(){
 		.catch(error => console.error('Error:', error));
 }
 /*view all sales*/
-function viewsales(){
-	documentonload();
+function viewSales(){
+	documentOnLoad();
 	fetch(`https://store-manager-api-db.herokuapp.com/api/v2/sales`,{
 		headers:{
 	    'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ function viewsales(){
 	})
 	  .then((res)=> res.json())
 	  .then((data) => {
-	  	checkconnection(data);
+	  	checkConnection(data);
 	  	if (data["message"]=="Nothing has been stored yet"){
 	  		return alert("Nothing has been stored yet");
 	  	}
@@ -82,20 +82,20 @@ function viewsales(){
 					alert("You cannot delete sale record. Contact admin");
 			    	return ;
 				}
-		    	deletesale(sale.Id);
+		    	deleteSale(sale.Id);
 		    }
 	  	});
 	  })
 	  .catch((err)=> console.log(err))
  }
  /*DELETE A SALE*/
- function deletesale(id_no){
- 	documentonload();
- 	adminload();
+ function deleteSale(id_no){
+ 	documentOnLoad();
+ 	adminLoad();
 	let url = 'https://store-manager-api-db.herokuapp.com/api/v2/sales/'.concat(id_no) ;
 	let del = confirm("Delete Sale record!");
     if (del == false) {
-        return closeform();
+        return closeForm();
     }
 	fetch(url, {
 		method: 'DELETE',
@@ -106,7 +106,7 @@ function viewsales(){
 	    }
 	}).then(res => res.json())
 	.then(response => {
-		checkconnection(response);
+		checkConnection(response);
 		if (response["message"]!="Sales deleted successfully"){
 			return alert(response["message"]);
 		}else{

@@ -1,8 +1,8 @@
 /*PRODUCTS*/
 /*Add new product*/
-function addproduct(){
-	documentonload();
-	adminload();
+function addProduct(){
+	documentOnLoad();
+	adminLoad();
 	let product_name=document.getElementById("product_name").value;
 	let quantity=document.getElementById("quantity").value;
 	let price=document.getElementById("price").value;
@@ -21,7 +21,7 @@ function addproduct(){
 	  }
 	}).then(res => res.json())
 	.then(response => {
-		checkconnection(response);
+		checkConnection(response);
 		console.log(response);
 		if (response["message"]!="Product added successfully"){
 			return alert(JSON.stringify(response["message"]));
@@ -37,8 +37,8 @@ function addproduct(){
 }
 /* get all products*/
 function products(){
-	documentonload();
-	checkitemsincart();
+	documentOnLoad();
+	checkItemsInCart();
 	fetch(`https://store-manager-api-db.herokuapp.com/api/v2/products`,
 		{headers:{
 	    'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ function products(){
 	  }})
 	  .then((res)=> res.json())
 	  .then((data) => {
-	  	checkconnection(data);
+	  	checkConnection(data);
 	  	localStorage.setItem('numberofproducts',data["All products"].length);
 	  	data["All products"].forEach(function(user){
 	  		let table = document.getElementById("userstable");
@@ -72,7 +72,7 @@ function products(){
 					alert("You cannot modify product. Contact admin");
 			    	return ;
 				}
-		    	loadpopup();
+		    	loadPopUp();
 		    	document.getElementById("id_no").value = user.Id;
 		    	document.getElementById("product_name").value = user.product_name;
 		    	document.getElementById("quantity").value = user.quantity;
@@ -81,7 +81,7 @@ function products(){
 		    }
 		     cell6.onclick = function (event){
 		     	/*add items to cart---  this loads a pop up cart from with product name and input for quatity*/
-		    	popformcart();
+		    	popFormCart();
 		    	document.getElementById("prod_name").value = user.product_name;
 		    	localStorage.setItem('unit_cost',user.price);
 		    }
@@ -90,9 +90,9 @@ function products(){
 	  .catch((err)=> console.log(err))
  }
  /* update product data*/
- function editproduct(){
- 	documentonload();
- 	adminload();
+ function editProduct(){
+ 	documentOnLoad();
+ 	adminLoad();
 	let id_no=document.getElementById("id_no").value;
     let quantity = document.getElementById("quantity").value;
 	let price = document.getElementById("price").value;
@@ -110,7 +110,7 @@ function products(){
 	  }
 	}).then(res => res.json())
 	.then(response => {
-		checkconnection(response);
+		checkConnection(response);
 		console.log(response);
 		// check on negavite entries and validations
 		if (response["message"]!="Updated successfully"){
@@ -119,20 +119,20 @@ function products(){
 			alert(response["message"]);
 			let url= "home.html";
 			window.location = url;
-			return closeform();
+			return closeForm();
 		}
 	})
 	.catch(error => console.error('Error:', error));
 }
 /*delete a product/category*/
-function deleteproduct(theurl, pageurl){
-	documentonload();
-	adminload();
+function deleteProduct(theurl, pageurl){
+	documentOnLoad();
+	adminLoad();
 	let id_no=document.getElementById("id_no").value;
 	let url =theurl.concat(id_no) ;
 	let del = confirm("Delete!");
     if (del == false) {
-        return closeform();
+        return closeForm();
     }
 	fetch(url, {
 	  method: 'DELETE',
@@ -143,10 +143,10 @@ function deleteproduct(theurl, pageurl){
 	  }
 	}).then(res => res.json())
 	.then(response => {
-		checkconnection(response);
+		checkConnection(response);
 		if (response["message"]=="Product deleted successfully" || response["message"]=="category deleted successfully"){
 			alert(response["message"]);
-			closeform();
+			closeForm();
 			let url= pageurl; 
     		return window.location = url;
 		}else{
@@ -156,8 +156,8 @@ function deleteproduct(theurl, pageurl){
 	.catch(error => console.error('Error:', error));
 }
 /*add products to cart*/
-function addtocart(){
-	documentonload();
+function addToCart(){
+	documentOnLoad();
 	prod_name = document.getElementById("prod_name").value;
 	prod_quantity = document.getElementById("prod_quantity").value;
 	let unit_cost = localStorage.getItem('unit_cost');
@@ -181,5 +181,5 @@ function addtocart(){
 	localStorage.setItem('mycart', JSON.stringify(cart_item));
 	let x = cart_item.length;
 	document.getElementById('itemincart').innerHTML = x;
-	closecart();
+	closeCart();
 }

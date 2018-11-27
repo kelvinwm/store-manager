@@ -1,7 +1,7 @@
 /*get all categories*/
 function categories(){
-	documentonload();
-	adminload();
+	documentOnLoad();
+	adminLoad();
 	fetch(`https://store-manager-api-db.herokuapp.com/api/v2/category`,{
 		headers:{
 	    'Content-Type': 'application/json',
@@ -10,7 +10,7 @@ function categories(){
 	})
 	  .then((res)=> res.json())
 	  .then((data) => {
-	  	checkconnection(data);
+	  	checkConnection(data);
 	  	console.log(data);
 	  	data["All categories"].forEach(function(category){
 	  		let table = document.getElementById("categories_table");
@@ -24,8 +24,8 @@ function categories(){
 		    cell3.innerHTML = category.date;
 		    cell4.innerHTML = `<img style="cursor: pointer; width:15%;" src="img/edit.png" alt="edit cart">`;
 		    cell4.onclick = function (event){
-		    	adminload();
-		    	loadpopup();
+		    	adminLoad();
+		    	loadPopUp();
 		    	document.getElementById("id_no").value = category.Id;
 		    	document.getElementById("category_name").value = category.Category;
 		    }
@@ -34,9 +34,9 @@ function categories(){
 	  .catch((err)=> console.log(err))
  }
  /*Add category*/
- function addnewcategory(){
-	documentonload();
-	adminload();
+ function addNewCategory(){
+	documentOnLoad();
+	adminLoad();
 	let newcategory=document.getElementById("newcategory_name").value;
 	let url = 'https://store-manager-api-db.herokuapp.com/api/v2/category';
 	let data = {category: newcategory};
@@ -49,13 +49,13 @@ function categories(){
 	  }
 	}).then(res => res.json())
 	.then(response => {
-		checkconnection(response);
+		checkConnection(response);
 		console.log(response);
 		if (response["message"]!="category added successfully"){
 			return alert(response["message"]|| response["Error"]);
 		}else{
 	    	document.getElementById("newcategory_name").value = "";
-	    	closecart();
+	    	closeCart();
 	    	let url= "categories.html";
 			window.location = url;
 			return alert(response["message"]);
@@ -64,9 +64,9 @@ function categories(){
 	.catch(error => console.error('Error:', error));
   }
 /*update category*/
-function editcategory(){
-	documentonload();
-	adminload();
+function editCategory(){
+	documentOnLoad();
+	adminLoad();
 	let id_no=document.getElementById("id_no").value;
 	let category=document.getElementById("category_name").value;
 	let url = 'https://store-manager-api-db.herokuapp.com/api/v2/category/'.concat(id_no) ;
@@ -81,14 +81,14 @@ function editcategory(){
 	}).then(res => res.json())
 	.then(response => {
 		console.log(response);
-		checkconnection(response);
+		checkConnection(response);
 		if (response["message"]!="Updated successfully"){
 			return alert(response["message"] || response["Alert"]);
 		}else{
 			alert(response["message"]);
 			let url= "categories.html";
 			window.location = url;
-			return closeform();
+			return closeForm();
 		}
 	})
 	.catch(error => console.error('Error:', error));

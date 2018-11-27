@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Store manager</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/index.js"></script>
+  </head>
+  <script>
+    documentOnLoad();
+  </script>
+  <body onload="adminLoad()">
+    <header>
+      <div class="container">
+        <div id="trademark">
+          <h1>Store Manager</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="../manage.html"><b>Home</b></a></li>
+            <li style="text-align: center;"><img src="../img/ac.png" alt="myaccount"> <br><i id="myemail">myaccount@here.com</i></li>
+          </ul>
+        </nav>
+      </div> 
+    </header>
+
+  <div class="container">
+    <div id="login-background">
+      <div class="regform">
+        <h2>User Registration</h2>
+        <hr>
+        <br>
+        <form id="registerfrom">
+          <div id="entery"><label>First Name:</label><br>
+               <input type="text" id="first-name" placeholder="first name" required>
+          </div>
+          <div id="entery"><label>Last Name:</label><br>
+               <input type="text" id="last_name" placeholder="last name" required>
+          <div id="entery"><label>Email:</label><br>
+           <input type="email" id="user_email" placeholder="user@storemng.com" required>
+          </div>
+          <div  id="entery">
+            <label>Password:</label><br>
+           <input type="password" id="user_password" placeholder="Enter password" required> 
+          </div>
+          <div  id="entery">
+            <label>Confirm password:</label><br>
+           <input type="password" id="confirm_password" placeholder="Confirm password" required>
+          </div          <div>
+            <p><a href="index.html">Already have an Account! Please Login</a></p>
+          </div>
+          <div  id="entery">
+            <button type="button" onclick="addNewUser()" class="button_reg">Sign up</button>
+          </div>
+        </form>
+      </div>
+      </div>
+    </div>
+  <footer>
+      <p>Store Manager Copyright &copy; 2018</p>
+    </footer>
+  </body>
+</html>

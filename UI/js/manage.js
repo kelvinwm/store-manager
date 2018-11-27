@@ -1,9 +1,9 @@
 /*Dashboard*/
-function dashboardlayout(){
-	adminload();
-	documentonload();
+function dashboardLayout(){
+	adminLoad();
+	documentOnLoad();
 	users();
-	viewsales();
+	viewSales();
 	products();
 	document.getElementById('activeusers').innerHTML = localStorage.getItem('numberofusers');
 	document.getElementById('totalsales').innerHTML = localStorage.getItem('numberofsales');
